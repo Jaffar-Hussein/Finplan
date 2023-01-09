@@ -19,7 +19,8 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<Signup setUser={setUser}/>}/>
+        {/* <Route path="" element */}
+        <Route path='/register' element={<Signup setUser={setUser}/>}/>
         <Route path='/login' element={<Login setUser={setUser}/>}/>
       </Routes>
     </div>
