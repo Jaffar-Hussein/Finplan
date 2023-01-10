@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import Signup from './components/sign-up';
-import Login from './components/login'
-import {Routes, Route} from "react-router-dom"
+import Login from './components/login';
+import Landing from './components/landingpage';
+import {Routes, Route} from "react-router-dom";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
     <div className="App">
       <Routes>
         {/* <Route path="" element */}
+        <Route path='/home' element={<Landing />}/>
         <Route path='/register' element={<Signup setUser={setUser}/>}/>
         <Route path='/login' element={<Login setUser={setUser}/>}/>
       </Routes>
