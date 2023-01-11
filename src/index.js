@@ -5,6 +5,7 @@ import App from './App';
 import {BrowserRouter as Router} from "react-router-dom"
 import reportWebVitals from './reportWebVitals';
 import { sendToVercelAnalytics } from './vitals';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
