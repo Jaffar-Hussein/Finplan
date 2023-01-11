@@ -1,0 +1,55 @@
+form input{
+    background-color:transparent;
+}
+.bg-image {
+    /* background-image: url('assets/signin.svg'); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .signup-image {
+    /* background-image: url('assets/loginBg.png'); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  
+  .login-heading {
+    letter-spacing: 5px;
+  }
+  
+  .btn-primary{
+    background-color:rgba(225, 159, 32, 1)!important;
+    border-color: rgba(225, 159, 32, 1) !important;
+  }
+  .btn-secondary{
+    background-color:transparent!important;
+    border-color: rgba(225, 159, 32, 1)!important;
+    color:rgba(225, 159, 32, 1)!important;
+  }
+  .login {
+    min-height: 100vh;
+    background-color: #1E1E1E;;
+  }
+  .userName, .pass{
+    background: transparent !important;
+    
+
+  }
+
+  .form-control.is-invalid:focus{
+    box-shadow: none!important;
+  }
+  .second-auth{
+    background-color: rgb(243, 248, 254);
+  }
+  .aurora {
+         background: linear-gradient(180deg, rgba(255, 255, 255, 0.132) 0%, rgba(255, 255, 255, 0.0165) 100%);
+        backdrop-filter: blur(100px);
+        position: absolute;
+        width: 40%;
+        height: 850px;
+        left: 0px;
+        top: 0px;
+  }
