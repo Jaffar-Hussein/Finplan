@@ -396,7 +396,36 @@ hr{
     text-align: center;
 }
 
-/* #wealth-text{
+#footer-company{
     position: relative;
-    left: 15%;
-} */
+    display: flex;
+    width: 700px;
+    justify-content: space-between;
+    color: #184E77;
+}
+
+#footer-company h6{
+    color:  #184E77;
+    
+    width: 300px;
+    height: 72px;
+    left: 246px;
+    top: 72px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 72px;
+    /* identical to box height */
+
+    letter-spacing: 0.19em;
+}
+
+#footer-company img{
+    /* position: absolute; */
+    width: 58px;
+    height: 63px;
+    left: 164px;
+    top: 78px;
+}
