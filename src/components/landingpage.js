@@ -132,8 +132,8 @@ function Landing(){
             alt=""
             id="left-ellipse"
           />
-          <img src={require("../assets/logo.svg")} alt="logo" id="logo" />
-          <div className="container my-5">
+          
+          {/* <div className="container my-5"> */}
             {/* Footer */}
             <footer
               className="text-center text-lg-start text-white"
@@ -146,39 +146,16 @@ function Landing(){
                   {/*Grid row*/}
                   <div className="row">
                     {/* Grid column */}
-                    <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                      <h6 className="text-uppercase mb-4 font-weight-bold">
+                    <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3" id="footer-company">
+                    <img src={require("../assets/logo.png")} alt="logo" id="logo" />
+                      <h6 className="text mb-4 font-weight-bolder">
                         Fin-plan
                       </h6>
-                      <p>
-                        Here you can use rows and columns to organize your
-                        footer content. Lorem ipsum dolor sit amet, consectetur
-                        adipisicing elit.
-                      </p>
+                      <p>Welcome to finplan</p>
                     </div>
                     {/* Grid column */}
 
-                    <hr className="w-100 clearfix d-md-none" />
-
-                    {/* Grid column */}
-                    <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                      <h6 className="text-uppercase mb-4 font-weight-bold">
-                        Products
-                      </h6>
-                      {/* <p>
-                        <a className="text-white" href="">MDBootstrap</a>
-                      </p>
-                      <p>
-                        <a className="text-white">MDWordPress</a>
-                      </p>
-                      <p>
-                        <a className="text-white">BrandFlow</a>
-                      </p>
-                      <p>
-                        <a className="text-white">Bootstrap Angular</a>
-                      </p> */}
-                    </div>
-                    {/* Grid column */}
+                    
 
                     <hr className="w-100 clearfix d-md-none" />
 
@@ -262,7 +239,7 @@ function Landing(){
               {/* Copyright */}
             </footer>
             {/* Footer */}
-          </div>
+          {/* </div> */}
           {/* End of .container */}
           <img
             src={require("../assets/right-ellipse.svg")}
