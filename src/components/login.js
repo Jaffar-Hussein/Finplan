@@ -6,13 +6,15 @@ function Login() {
       <div className="row g-0">
         <div className="d-none d-md-flex col-md-4 col-lg-6 bg-image ">
           <div className='welcome'>
-            <p className='h1 welcomeText'>
+            <p className='h1 welcomeText letters'>
               Welcome
             </p>
             <div className='d-flex justify-content-center align-items-center my-5'>
-              <img src={logo} className="img-fluid mx-3"/>
-              <p className='fin h2'>Fin-plan</p>
+              <img src={logo} className="img-fluid mx-3" />
+              <p className='fin h2 letters'>Fin-plan</p>
             </div>
+            <p className='text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam animi incidunt culpa.</p>
+
             
           </div>
         </div>
@@ -40,7 +42,7 @@ function Login() {
                     </div>
 
                     <div className="d-grid form mb-3">
-                      <button className="btn btn-lg btn-primary btn-login  fw-bold mb-2" type="submit">Sign in</button>
+                      <button className="btn btn-lg btn-primary btn-login  fw-bold mb-2" type="submit">Login</button>
                       <div className="text-center">
                       </div>
                     </div>
