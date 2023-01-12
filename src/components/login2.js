@@ -1,6 +1,6 @@
 import React from "react";
 import '../style.css';
-function Login(){
+function Login2(){
     return (
         <div className="container-fluid vh-100 vw-100 row p-0 m-0">
             <div className="col-md-6 relative">
@@ -37,4 +37,4 @@ function Login(){
 
 }
 
-export default Login
+export default Login2

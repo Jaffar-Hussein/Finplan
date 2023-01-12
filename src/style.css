@@ -1,25 +1,43 @@
-form input{
-    background-color:transparent;
-    }
-    .bg-image {
+form input {
+    background-color: transparent;
+}
+
+.fin {
+    color: #184E77;
+}
+
+.bg-image {
     background-image: url('./assets/background.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    }
-    
-    .login-heading {
+    position: relative;
+}
+
+.welcomeText {
+    margin-left: 2rem;
+
+}
+
+.welcome {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 5px;
+
+}
+
+.login-heading {
     font-weight: 300;
-    }
-    
-    .btn-login {
-    font-size: 0.9rem;
-    letter-spacing: 0.05rem;
-    padding: 0.75rem 1rem;
-    background-color: #005F73;
-    }
-    .login {
+}
+
+.btn-primary {
+    border-color: #E19F20 !important;
+    background-color: #E19F20 !important;
+}
+
+.login {
     min-height: 100vh;
     background: rgba(155, 201, 255, 0.13);
-    }
-    
+}
