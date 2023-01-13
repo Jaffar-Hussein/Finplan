@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import '../styling/sign-up.css'
 import logo from '../assets/logo.svg'
 
@@ -43,7 +43,7 @@ function Signup({ setUser }) {
             <img src={logo} className="img-fluid mx-3" />
             <p className='fin h2 letters'>Fin-plan</p>
           </div>
-          <p className='text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam animi incidunt culpa.</p>
+          <p className='text-center'>Building a strong financial foundation, for a lifetime of security and success.</p>
 
 
         </div>
@@ -85,7 +85,7 @@ function Signup({ setUser }) {
                   </div>
                   <div className="mb-12 mt-3 ml-5">
                     <small className="text-muted float-left">
-                      Already have an Account? <a className="ml-2" type="button" style={{ textDecoration: 'none', color: '#005F73' }}>Log in</a>
+                      Already have an Account? <Link to="/login" className="ml-2" type="button" style={{ textDecoration: 'none', color: '#005F73' }}>Log in</Link>
                     </small>
                   </div>
 

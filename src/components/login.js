@@ -1,5 +1,6 @@
 import '../style.css';
 import logo from '../assets/logo.svg'
+import { Link } from 'react-router-dom'
 function Login() {
   return (
     <>
@@ -13,7 +14,7 @@ function Login() {
               <img src={logo} className="img-fluid mx-3" />
               <p className='fin h2 letters'>Fin-plan</p>
             </div>
-            <p className='text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam animi incidunt culpa.</p>
+            <p className='text-center'>Building a strong financial foundation, for a lifetime of security and success.</p>
 
             
           </div>
@@ -48,7 +49,7 @@ function Login() {
                     </div>
                     <div className="mb-12 mt-3 ml-5">
                       <small className="text-muted float-left">
-                        Don't have an Account? <a className="ml-2" type="button" style={{ textDecoration: 'none', color: '#005F73' }}>Create Account</a>
+                        Don't have an Account? <Link to="/register" className="ml-2" type="button" style={{ textDecoration: 'none', color: '#005F73' }}>Create Account</Link>
                       </small>
                     </div>
 
