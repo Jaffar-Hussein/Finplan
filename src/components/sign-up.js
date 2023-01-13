@@ -36,7 +36,7 @@ function Signup({ setUser }) {
     <div className="row g-0">
       <div className="d-none d-md-flex col-md-4 col-lg-6 bg-image ">
         <div className='welcome'>
-          <p className='h1 welcomeText letters'>
+          <p className='h1 welcomeText letters text-center'>
             Welcome
           </p>
           <div className='d-flex justify-content-center align-items-center my-5'>
