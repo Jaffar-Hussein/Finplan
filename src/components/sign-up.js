@@ -57,7 +57,7 @@ function Signup({ setUser }) {
                 <form className="box" role="form">
                   <div className="form-floating mb-3">
                     <input type="text" name="username" className="form-control" id="floatingInput" placeholder="Enter your fullname" />
-                    <label>Fullname</label>
+                    <label>Full name</label>
                   </div>
                   <div className="form-floating mb-3">
                     <input type="email" name="email" className="form-control" id="floatingEmail" placeholder="Enter your email" />
@@ -79,7 +79,7 @@ function Signup({ setUser }) {
                   </div>
 
                   <div className="d-grid form mb-3">
-                    <button className="btn btn-lg btn-primary btn-login  fw-bold mb-2" type="submit">Register Account</button>
+                    <button className="btn btn-lg btn-primary btn-login  fw-semibold mb-2" type="submit">Register Account</button>
                     <div className="text-center">
                     </div>
                   </div>

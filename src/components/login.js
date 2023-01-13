@@ -28,7 +28,7 @@ function Login() {
                   <form className="box" role="form">
                     <div className="form-floating mb-3">
                       <input type="email" name="username" className="form-control" id="floatingInput" placeholder="name@example.com" />
-                      <label>username</label>
+                      <label>Username</label>
                     </div>
                     <div className="form-floating mb-3">
                       <input type="password" name="password" className="form-control" id="floatingPassword" placeholder="Password" />
@@ -43,7 +43,7 @@ function Login() {
                     </div>
 
                     <div className="d-grid form mb-3">
-                      <button className="btn btn-lg btn-primary btn-login  fw-bold mb-2" type="submit">Login</button>
+                      <button className="btn btn-lg btn-primary btn-login  fw-semibold mb-2" type="submit">Login</button>
                       <div className="text-center">
                       </div>
                     </div>
