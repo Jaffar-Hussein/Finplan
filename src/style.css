@@ -1,5 +1,5 @@
 form input {
-    background-color: transparent;
+    background-color: transparent!important;
 }
 
 .fin {
@@ -43,4 +43,20 @@ form input {
 .login {
     min-height: 100vh;
     background: rgba(155, 201, 255, 0.13);
+}
+.form-control:focus{
+    box-shadow: none!important;
+    border-color: #E19F20!important;
+}
+
+.form-check-input:focus{
+    box-shadow: none!important;
+    border-color: #E19F20!important;
+}
+.form-check-input:focus-visible{
+    box-shadow: none!important;
+    border-color: #E19F20!important;
+}
+.form-check-input:checked[type=checkbox] {
+    background-color: #E19F20!important;
 }
