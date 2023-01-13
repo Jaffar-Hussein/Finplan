@@ -36,8 +36,8 @@ form input {
 }
 
 .btn-primary {
-    border-color: #E19F20 !important;
-    background-color: #E19F20 !important;
+    border-color: #184E77 !important;
+    background-color: #184E77 !important;
 }
 
 .login {
@@ -46,17 +46,17 @@ form input {
 }
 .form-control:focus{
     box-shadow: none!important;
-    border-color: #E19F20!important;
+    border-color: #184E77!important;
 }
 
 .form-check-input:focus{
     box-shadow: none!important;
-    border-color: #E19F20!important;
+    border-color: #184E77!important;
 }
 .form-check-input:focus-visible{
     box-shadow: none!important;
-    border-color: #E19F20!important;
+    border-color: #184E77!important;
 }
 .form-check-input:checked[type=checkbox] {
-    background-color: #E19F20!important;
+    background-color: #184E77!important;
 }
