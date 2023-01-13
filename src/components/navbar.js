@@ -38,7 +38,7 @@ export default function Navbar() {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0 fw-semibold">
-                            {user ?
+                            {!user ?
                                 <>
                                     <li className="nav-item">
                                         <a
@@ -58,7 +58,7 @@ export default function Navbar() {
                                         <a
                                             href="#/"
                                             className="nav-link"
-                                            onClick={() => navigate("/Retirement")}
+                                            onClick={() => navigate("/retirement")}
                                         ><i className="bi bi-person-vcard"></i> Retirement</a>
                                     </li>
                                     <li className="nav-item">
@@ -78,7 +78,7 @@ export default function Navbar() {
                                                 <a
                                                     href="#/"
                                                     className="dropdown-item fw-bold text-secondary"
-                                                    onClick={() => navigate("/my-polls")}
+                                                    onClick={() => navigate("/settings")}
                                                 ><i className="bi bi-gear-fill"/>{' '} Settings</a>
                                             </li>
                                             <li>
