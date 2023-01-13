@@ -1,11 +1,12 @@
 import React from "react";
 import '../styling/landing.css';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
+// import { library } from '@fortawesome/fontawesome-svg-core';
+// import { fab } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 function Landing(){
-  library.add(fab)
+  // library.add(fab)
     const style = {backgroundColor: "#3b5998"}
     return (
       <div id="landing">
@@ -33,7 +34,7 @@ function Landing(){
               alt="ideas"
               id="orange-ellipse1"
             />
-            <h2>Management</h2>
+            <h2>Savings</h2>
           </div>
           <img
             src={require("../assets/manage-idea.png")}
@@ -43,10 +44,10 @@ function Landing(){
         </div>
         <div id="advantage-2">
           <img src={require("../assets/savings.png")} alt="ideas" id="idea2" />
-          <h2>Management</h2>
+          <h2>Retirement plan</h2>
         </div>
         <div id="advantage-3">
-          <h2>Management</h2>
+          <h2>Debt planning</h2>
           <div id="idea3">
             <img src={require("../assets/savings.png")} alt="ideas" />
           </div>
@@ -69,9 +70,7 @@ function Landing(){
                   <div className="card-body">
                     <h5 className="card-title">Debt Planner</h5>
                     <p className="card-text">
-                      This is a longer card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
+                      Be sure to avoid bankruptcy by planning how much you borrow
                     </p>
                   </div>
                 </div>
@@ -87,9 +86,7 @@ function Landing(){
                   <div className="card-body">
                     <h5 className="card-title">Retirement planner</h5>
                     <p className="card-text">
-                      This is a longer card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
+                      We help you to take care of yourself after you retire
                     </p>
                   </div>
                 </div>
@@ -105,8 +102,7 @@ function Landing(){
                   <div className="card-body">
                     <h5 className="card-title">Financial Goal Tracker</h5>
                     <p className="card-text">
-                      This is a longer card with supporting text below as a
-                      natural lead-in to additional content.
+                      Achieve your dreams with our goal tracker
                     </p>
                   </div>
                 </div>
@@ -133,7 +129,9 @@ function Landing(){
             id="left-ellipse"
           />
           
-          {/* <div className="container my-5"> */}
+          <div 
+          // className="container my-5"
+           id="footer">
             {/* Footer */}
             <footer
               className="text-center text-lg-start text-white"
@@ -151,35 +149,41 @@ function Landing(){
                       <h6 className="text mb-4 font-weight-bolder">
                         Fin-plan
                       </h6>
-                      <p>Welcome to finplan</p>
+                      <p>Welcome to finplan. Incase of any queries, please feel free to contact us through our media handles</p>
                     </div>
                     {/* Grid column */}
 
                     
 
-                    <hr className="w-100 clearfix d-md-none" />
+                    {/* <hr className="w-100 clearfix d-md-none" />
 
                     {/* Grid column */}
-                    <hr className="w-100 clearfix d-md-none" />
+                    {/* <hr className="w-100 clearfix d-md-none" />  */}
 
                     {/* Grid column */}
-                    <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3" id="about">
                       <h6 className="text-uppercase mb-4 font-weight-bold">
-                        Contact
+                        Services
                       </h6>
                       <p>
-                        <i className="fas fa-home mr-3"></i> New York, NY 10012,
-                        US
+                        Email marketing
                       </p>
                       <p>
-                        <i className="fas fa-envelope mr-3"></i> info@gmail.com
+                        Campaigns
+                      </p>
+                    </div>
+
+                    <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3" id="about">
+                      <h6 className="text-uppercase mb-4 font-weight-bold">
+                        About
+                      </h6>
+                      <p>
+                        Our story
                       </p>
                       <p>
-                        <i className="fas fa-phone mr-3"></i> + 01 234 567 88
+                        Benefits
                       </p>
-                      <p>
-                        <i className="fas fa-print mr-3"></i> + 01 234 567 89
-                      </p>
+                      
                     </div>
                     {/* Grid column */}
 
@@ -196,7 +200,9 @@ function Landing(){
                         href="#!"
                         role="button"
                       >
-                        <i className="fab fa-facebook-f"></i>
+                        {/* <i className="fab fa-facebook-f"></i> */}
+                        <FontAwesomeIcon icon={['fab', 'facebook']} />
+                        <img src={require("../assets/facebook.png")} alt=""/>
                       </a>
 
                       {/* Twitter */}
@@ -206,18 +212,22 @@ function Landing(){
                         href="#!"
                         role="button"
                       >
-                        <i className="fab fa-twitter"></i>
+                        {/* <i className="fab fa-twitter"></i> */}
+                        <FontAwesomeIcon icon={['fab', 'twitter']} />
+                        <img src={require("../assets/twitter.png")} alt=""/>
                       </a>
 
                       {/* Instagram */}
-                      <a
+                      {/* <a
                         className="btn btn-primary btn-floating m-1"
                         // style="background-color: #ac2bac"
                         href="#!"
                         role="button"
-                      >
-                        <i className="fab fa-instagram"></i>
-                      </a>
+                      >  */}
+                        {/* <i className="fab fa-instagram"></i> */}
+                        <FontAwesomeIcon icon={['fab', 'instagram']} />
+                        <img src={require("../assets/instagram.png")} alt=""/>
+                       {/* </a> */}
                     </div>
                   </div>
                   {/*Grid row*/}
@@ -230,16 +240,14 @@ function Landing(){
               <div
                 className="text-center p-3"
                 // style="background-color: rgba(0, 0, 0, 0.2)"
+                id="copyright"
               >
-                © 2023 Copyright:
-                <a className="text-white" href="https://mdbootstrap.com/">
-                  finplan
-                </a>
+                Copyright © 2023 Fin - plan. All rights reserved. 
               </div>
               {/* Copyright */}
             </footer>
             {/* Footer */}
-          {/* </div> */}
+          </div>
           {/* End of .container */}
           <img
             src={require("../assets/right-ellipse.svg")}
