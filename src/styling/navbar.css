@@ -1,46 +1,13 @@
-.bi-x-diamond-fill {
-    color: #E19F20;
-}
-#navbar-btn-login {
-    color: #E19F20;
-    border: 1px solid #E19F20;
-    padding-inline: 30px;
-    margin-inline: 10px;
-}
+.btn-primary{
+    background-color: #E19F20 !important;
+    border-color: #E19F20 !important;
 
-#navbar-btn-login:hover {
-    background-color: #E19F20;
-    color: white;
 }
-
-#navbar-btn-signup {
-    color: white;
-    background-color: #E19F20;
-    padding-inline: 30px;
-    border: 1px solid #E19F20;
+.btn-outline-primary{
+    border-color: #E19F20 !important;
+    color: #E19F20 !important;
 }
-
-#navbar-btn-signup:hover {
-    background-color: white;
-    color: #E19F20;
-}
-
-#navbar-btn-profile {
-    background-color: #E19F20;
-    padding-inline: 15px;
-    border: 1px solid #E19F20;
-}
-
-#navbar-btn-profile .dropdown-toggle {
-    color: white;
-}
-
-@media (max-width: 991px) {
-    #navbar-btn-login {
-        display: inline-block;
-        margin: 10px 0 10px 0;
-    }
-    #navbar-btn-signup {
-        display: inline-block;
-    }
+.btn-outline-primary:hover{
+    background-color: #E19F20 !important;
+    color: #FFFF !important;
 }
