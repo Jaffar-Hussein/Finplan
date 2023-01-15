@@ -1,7 +1,36 @@
 import '../style.css';
 import logo from '../assets/logo.svg'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate, } from 'react-router-dom'
+import {useEffect,useState, React } from 'react'
 function Login() {
+  const navigate = useNavigate();
+
+  const [username, setusername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('link', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password }),
+      });
+
+      const data = await response.json();
+      const { token } = data;
+      localStorage.setItem('jwt', token);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    const jwt = localStorage.getItem('jwt');
+    if (jwt) {
+      navigate('/dashboard');
+    }
+  });
   return (
     <>
       <div className="row g-0">
@@ -11,7 +40,7 @@ function Login() {
               Welcome
             </p>
             <div className='d-flex justify-content-center align-items-center my-5'>
-              <img src={logo} className="img-fluid mx-3" />
+              <img src={logo} className="img-fluid mx-3" alt='' />
               <p className='fin h2 letters'>Fin-plan</p>
             </div>
             <p className='text-center'>Building a strong financial foundation, for a lifetime of security and success.</p>
@@ -25,13 +54,14 @@ function Login() {
               <div className="row ">
                 <div className="col-md-9 col-lg-8 mx-auto ">
                   <h3 className="login-heading mb-4" >Sign In</h3>
-                  <form className="box" role="form">
+                  <form className="box" onSubmit={handleSubmit}>
                     <div className="form-floating mb-3">
-                      <input type="email" name="username" className="form-control" id="floatingInput" placeholder="name@example.com" />
+                      <input type="text" name="username" className="form-control" 
+                      id="floatingInput" placeholder="name@example.com" value={username} onChange={(e) => setusername(e.target.value)}/>
                       <label>Username</label>
                     </div>
                     <div className="form-floating mb-3">
-                      <input type="password" name="password" className="form-control" id="floatingPassword" placeholder="Password" />
+                      <input type="password" name="password"  value={password} onChange={(e) => setPassword(e.target.value)} className="form-control" id="floatingPassword" placeholder="Password" />
                       <label>Password</label>
                     </div>
 
