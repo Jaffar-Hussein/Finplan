@@ -218,16 +218,16 @@ function Landing(){
                       </a>
 
                       {/* Instagram */}
-                      {/* <a
+                      <a
                         className="btn btn-primary btn-floating m-1"
                         // style="background-color: #ac2bac"
                         href="#!"
                         role="button"
-                      >  */}
+                      > 
                         {/* <i className="fab fa-instagram"></i> */}
                         <FontAwesomeIcon icon={['fab', 'instagram']} />
                         <img src={require("../assets/instagram.png")} alt=""/>
-                       {/* </a> */}
+                       </a>
                     </div>
                   </div>
                   {/*Grid row*/}
