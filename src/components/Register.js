@@ -4,31 +4,33 @@ import '../styling/sign-up.css'
 import logo from '../assets/logo.svg'
 
 function Signup({ setUser }) {
-  const [username, setUsername] = useState("");
+  const [first_name, setFirstname] = useState("");
+  const [second_name, setSecond_name] = useState("");
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate()
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("/signup", {
+    fetch("https://finplanbackend-production.up.railway.app/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username,
+        first_name,
+        second_name,
         password,
         email,
       }),
-    }).then((r) => {
-      if (r.ok) {
-        r.json().then((user) => {
-          setUser(user)
-          navigate("/login")
-        });
-      }
-    });
+    })
+    .then((r) => r.json())
+    .then((d) => {
+      console.log(d)
+      navigate("/login")
+    }
+    );
   }
   return (
     <div className="row g-0">
@@ -54,8 +56,12 @@ function Signup({ setUser }) {
                 <h3 className="login-heading mb-4" >Sign Up</h3>
                 <form className="box" onSubmit={handleSubmit}>
                   <div className="form-floating mb-3">
-                    <input type="text" name="username"  value={username} onChange={(e) => setUsername(e.target.value)} className="form-control" id="floatingInput" placeholder="Enter your fullname" />
-                    <label>Full name</label>
+                    <input type="text" name="firstname"  value={first_name} onChange={(e) => setFirstname(e.target.value)} className="form-control" id="floatingInput" placeholder="Enter your first name" />
+                    <label>First Name</label>
+                  </div>
+                  <div className="form-floating mb-3">
+                    <input type="text" name="firstname"  value={second_name} onChange={(e) => setSecond_name(e.target.value)} className="form-control" id="second_name" placeholder="Enter your first name" />
+                    <label>Last Name</label>
                   </div>
                   <div className="form-floating mb-3">
                     <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} className="form-control" id="floatingEmail" placeholder="Enter your email" />
@@ -65,10 +71,7 @@ function Signup({ setUser }) {
                     <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} className="form-control" id="floatingPassword" placeholder="Password" />
                     <label>Password</label>
                   </div>
-                  <div className="form-floating mb-3">
-                    <input type="password" name="confirmPassword" className="form-control" id="floatingConfirmPassword" placeholder="Password" />
-                    <label>Confirm Password</label>
-                  </div>
+                  
                   <div className="form-check mb-3">
                     <input className="form-check-input" style={{ backgroundColor: '#E19F20' }} type="checkbox" value="" id="rememberPasswordCheck" />
                     <label className="form-check-label" >

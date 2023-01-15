@@ -5,16 +5,16 @@ import {useEffect,useState, React } from 'react'
 function Login() {
   const navigate = useNavigate();
 
-  const [username, setusername] = useState('');
+  const [email, setemail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('link', {
+      const response = await fetch('https://finplanbackend-production.up.railway.app/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ email, password }),
       });
 
       const data = await response.json();
@@ -28,7 +28,7 @@ function Login() {
   useEffect(() => {
     const jwt = localStorage.getItem('jwt');
     if (jwt) {
-      navigate('/dashboard');
+      navigate('/');
     }
   });
   return (
@@ -56,9 +56,9 @@ function Login() {
                   <h3 className="login-heading mb-4" >Sign In</h3>
                   <form className="box" onSubmit={handleSubmit}>
                     <div className="form-floating mb-3">
-                      <input type="text" name="username" className="form-control" 
-                      id="floatingInput" placeholder="name@example.com" value={username} onChange={(e) => setusername(e.target.value)}/>
-                      <label>Username</label>
+                      <input type="text" name="email" className="form-control" 
+                      id="floatingInput" placeholder="name@example.com" value={email} onChange={(e) => setemail(e.target.value)}/>
+                      <label>email</label>
                     </div>
                     <div className="form-floating mb-3">
                       <input type="password" name="password"  value={password} onChange={(e) => setPassword(e.target.value)} className="form-control" id="floatingPassword" placeholder="Password" />
