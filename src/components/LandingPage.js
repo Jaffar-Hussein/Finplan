@@ -58,7 +58,7 @@ function LandingPage() {
                             <p className='h3 mgnt'>
                                 Management
                             </p>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br></br> Hic unde quae mollitia commodi accusamus necessitatibus <br></br> asperiores temporibus ipsum ad officiis!</p>
+                            <p>Achieving your personal and professional <br></br>aspirations with the support of our expert management, <br></br> tailored to meet your unique needs and drive success.</p>
                         </div>
                         <div className='col-md-6'>
                             <img src={Manage} className="manageIcon" />
@@ -73,7 +73,7 @@ function LandingPage() {
                             <p className='h3 ret'>
                                 Retirement
                             </p>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br></br> Hic unde quae mollitia commodi accusamus necessitatibus <br></br> asperiores temporibus ipsum ad officiis!</p>
+                            <p>Ensuring a comfortable and secure retirement through expert management<br></br> and personalized planning, <br></br>giving you the financial peace of mind you deserve.</p>
                         </div>
 
                     </div>
@@ -82,9 +82,11 @@ function LandingPage() {
                     <div className='row my-5'>
                         <div className='col-md-6 usDesc'>
                             <p className='h3 ret1'>
-                                Retirement
+                                Goals
                             </p>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br></br> Hic unde quae mollitia commodi accusamus necessitatibus <br></br> asperiores temporibus ipsum ad officiis!</p>
+                            <p>Expertly managing your finances for maximum success.<br></br>
+                Setting and achieving your financial goals with ease.<br></br>
+                Creating a secure financial future for you and your loved ones.</p>
                         </div>
                         <div className='col-md-6'>
                             <img src={savings} className='saveIcon' />

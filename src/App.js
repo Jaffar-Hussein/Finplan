@@ -10,6 +10,7 @@ import  AuthContextProvider from './components/useAuthCheck';
 // import useAuthCheck from './components/useAuthCheck';
 import './App.css';
 import Dashboard from './components/Dashboard';
+import Debt from './components/Debt';
 
 function App() {
     // const navigate = useNavigate()
@@ -23,6 +24,8 @@ function App() {
                 <Route element={<ProtectedRoutes/>}>
                     {/* Add your routes here */}
                     <Route path="/dashboard" element={<Dashboard/>} />
+                    <Route path="/debt" element={<Debt/>} />
+
                 </Route>
             </Routes>
             
