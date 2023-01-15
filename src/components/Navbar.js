@@ -12,7 +12,7 @@ function NavBar() {
                         <img className="" src={logo} alt="logo" height="100" to='/' />
 
                     </NavLink>
-                    <p className='d-inline  mx-2'>Fin-Plan</p>
+                    <p className='d-inline  mx-2 finances'>Fin-Plan</p>
                 </li>
 
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,8 +46,8 @@ function NavBar() {
 
                        
                     </ul>
-                     <button className="btn btn-outline-primary mx-3">Login</button>
-                        <button className="btn btn-primary">Sign Up</button>
+                     <button className="btn btn-primary mx-3">Login</button>
+                        <button className="btn btn-outline-primary">Sign Up</button>
 
                 </div>
             </div>
