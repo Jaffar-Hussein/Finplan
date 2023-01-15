@@ -2,7 +2,7 @@ import React from 'react';
 import {Routes, Route} from "react-router-dom"
 import Signup from './components/sign-up';
 import Login from './components/login';
-import LandingPage from './components/LandingPage';
+import Landing from './components/LandingPage';
 import ProtectedRoutes from './components/ProtectedRoutes';
 // import Navbar from "./components/navbar";
 // import NotFound from "./components/404";
@@ -14,7 +14,7 @@ function App() {
     return (
             <Routes>
                 {/* <Route path="/landing"  /> */}
-                <Route path="/" exact element={<LandingPage/>} />
+                <Route path="/" exact element={<Landing/>} />
                 <Route path="/login" element={<Login/>} />
                 <Route path="/register" element={<Signup/>} />
                 <Route element={<ProtectedRoutes/>}/>
