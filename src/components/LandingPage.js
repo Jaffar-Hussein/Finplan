@@ -11,7 +11,8 @@ import retirement from '../assets/retirement.svg'
 import goal from '../assets/goaltracker.svg'
 import rafiki from '../assets/rafiki.svg'
 import Footer from './footer';
-
+import calenderWhite from '../assets/calenderWhite.svg'
+import bottomCal from '../assets/bottomCal.svg'
 function LandingPage() {
     return (
         <>
@@ -125,12 +126,12 @@ function LandingPage() {
 
             </div>
             {/* Call Action */}
-            <div className='bgAction'>
-                <div className='container'>
-                    <div className='row align-items-center'>
+            <div className='bgAction itemsAction'>
+                <div className='container '>
+                    <div className='row align-items-center '>
                         <div className='col-md-6'>
                             <p className='h3 text-light my-3'>
-                                <span>Lets make your wealth</span> <br></br>  work for you today.
+                                <span className='wealth'>Lets make your wealth</span> <br></br>  work for you today.
                             </p>
                             <p className='text-light'>
                                 Lorem ipsum dolor sit amet consectetur. Elit <br></br> amet lorem tortor dictum tempor penatibus <br></br> turpis eleifend eu.Lorem ipsum dolor sit amet <br></br> consectetur. Elit amet lorem tortor dictum <br></br> tempor penatibus turpis eleifend eu.
@@ -139,6 +140,13 @@ function LandingPage() {
                         </div>
                         <div className='col-md-6'>
                             <img src={rafiki} className="rafiki my-5"/>
+                        </div>
+                        <div >
+                            <img className='cal1'src={calenderWhite}/>
+                        </div>
+                        <div >
+                        <img className='cal2' src={bottomCal}/>
+
                         </div>
                     </div>
                 </div>

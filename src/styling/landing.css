@@ -76,6 +76,24 @@ margin-right: 10px;
 .rafiki{
     height: 50vh;
 }
+.wealth::after{
+    content: url('../assets/dollar.svg');
+}
+
+.itemsAction{
+    position: relative;
+}.cal1{
+    position: absolute;
+    top:0;
+    left:0;
+    height: 15vh;
+}
+.cal2{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+}
 @media screen and (max-width: 990px) {
     .coin, .calendericon{
         display: none;
