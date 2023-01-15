@@ -1,25 +1,23 @@
-import { useEffect } from 'react';
-import { useLocation,useNavigate } from 'react-router-dom';
+import React, { createContext, useState } from 'react';
 
-function useAuthCheck() {
-  const location = useLocation();
+export const AuthContext = createContext();
 
-  const navigate = useNavigate();
-  
-  useEffect(() => {
-    const jwt = localStorage.getItem('jwt');
-    if (!jwt) {
-      // redirect to login or signup page if JWT not found
-      navigate("/landing");
-      return;
-    }
-    
-    // check if JWT is valid (e.g. by making a request to your server)
-    // ...
+const AuthContextProvider = (props) => {
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-    // if JWT is invalid, remove it from local storage and redirect to login or signup page
-    localStorage.removeItem('jwt');
-  }, [location]);
-}
+    const login = () => {
+        setIsAuthenticated(true);
+    };
 
-export default useAuthCheck;
+    const logout = () => {
+        setIsAuthenticated(false);
+    };
+
+    return (
+        <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+            {props.children}
+        </AuthContext.Provider>
+    );
+};
+
+export default AuthContextProvider;

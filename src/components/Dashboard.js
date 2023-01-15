@@ -2,13 +2,13 @@ import React from 'react';
 import NavBar from './Navbar';
 
 
-function LandingPage() {
+function Dashboard() {
     return (
         <>
         <NavBar/>
-        <h1>LandingPage</h1>
+        <h1>Dashboard</h1> 
         </>
     )
 }
 
-export default LandingPage;
+export default Dashboard;

@@ -1,36 +1,63 @@
 import '../style.css';
 import logo from '../assets/logo.svg'
 import { Link,useNavigate, } from 'react-router-dom'
-import {useEffect,useState, React } from 'react'
+import {useState, React,useContext } from 'react'
+import { AuthContext } from './useAuthCheck';
+
 function Login() {
   const navigate = useNavigate();
-
+  const { login } = useContext(AuthContext);
   const [email, setemail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = async (e) => {
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const response = await fetch('https://finplanbackend-production.up.railway.app/login', {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/json' },
+  //       body: JSON.stringify({ email, password }),
+  //     });
+
+  //     const data = await response.json();
+  //     const { token } = data;
+  //     localStorage.setItem('jwt', token);
+  //     // navigate('/dashboard');
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+        
+  function handleSubmit(e) {
     e.preventDefault();
-    try {
-      const response = await fetch('https://finplanbackend-production.up.railway.app/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-      });
-
-      const data = await response.json();
-      const { token } = data;
+    fetch("https://finplanbackend-production.up.railway.app/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        password,
+        email,
+      }),
+    })
+    .then((r) => r.json())
+    .then((d) => {
+      console.log(d)
+      const { token } = d;
       localStorage.setItem('jwt', token);
-    } catch (error) {
-      console.log(error);
+      login();
+      navigate("/dashboard")
     }
-  };
+    );
+  }
+  
+    // const jwt = localStorage.getItem('jwt');
+    // if (jwt) {
+    //   navigate('/dashboard');
+    // }
+  
 
-  useEffect(() => {
-    const jwt = localStorage.getItem('jwt');
-    if (jwt) {
-      navigate('/');
-    }
-  });
   return (
     <>
       <div className="row g-0">

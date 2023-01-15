@@ -1,13 +1,14 @@
-import React from 'react';
+import {React,useContext} from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
-import useAuthCheck from './useAuthCheck';
+import { AuthContext } from './useAuthCheck';
+// import useAuthCheck from './useAuthCheck';
 
 function ProtectedRoutes() {
-  const authenticated = useAuthCheck();
+const { isAuthenticated } = useContext(AuthContext);
     const navigate = useNavigate()
   return (
     <>
-      {authenticated ? (
+      {isAuthenticated ? (
         <Outlet/>
       ) : (
         navigate("/")

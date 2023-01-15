@@ -1,9 +1,15 @@
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import Avatar from 'react-avatar';
 import logo from '../assets/logo.svg'
 import '../styling/navbar.css'
-
+import { AuthContext } from './useAuthCheck';
+// import useAuthCheck from './useAuthCheck';
 function NavBar() {
+const { isAuthenticated } = useContext(AuthContext);
 
+    
+    console.log(isAuthenticated);
     return (
         <nav className="navbar navbar-expand-lg justify-content-between">
             <div className="container">
@@ -21,11 +27,12 @@ function NavBar() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 ">
-
                     </ul>
                     <ul className="navbar-nav">
+                        {!isAuthenticated? (
+                        <>
                     <li className="nav-item ">
-                            <NavLink className="nav-link active" aria-current="page" end to="/">Home</NavLink>
+                        <NavLink className="nav-link active" aria-current="page" end to="/">Home</NavLink>
                         </li>
                         <li className="nav-item " >
                             <NavLink className="nav-link mx-2" to='/' >Dashboard</NavLink>
@@ -33,24 +40,35 @@ function NavBar() {
                         </li>
                         <li className="nav-item" >
                             <NavLink className="nav-link" to='/' >Services</NavLink>
-
                         </li>
-                        {/* <li className="nav-item" >
-                            <NavLink className="nav-link mx-2" to='/' > Tution</NavLink>
-
-                        </li> */}
-
                         <li className="nav-item unstyled">
                             <NavLink className="nav-link" to="/">Contact Us</NavLink>
                         </li>
+                        </>):
+                        (
+                            <><li className="nav-item ">
+                                    <NavLink className="nav-link " aria-current="page" end to="/">Home</NavLink>
+                                </li><li className="nav-item ">
+                                        <NavLink className="nav-link mx-3" to='/'>Goal</NavLink>
 
-                       
+                                    </li><li className="nav-item">
+                                        <NavLink className="nav-link" to='/'>Debt</NavLink>
+                                    </li><li className="nav-item unstyled">
+                                        <NavLink className="nav-link" to="/">Retirement</NavLink>
+                                    </li></>
+                        )}
                     </ul>
-                     <button className="btn btn-outline-primary mx-3">Login</button>
-                        <button className="btn btn-primary">Sign Up</button>
+                    {isAuthenticated? (<>
+                        <Avatar name="John Doe" round={true} size={30} textSizeRatio={1.75} color="#184E77" style={{}}  className="mx-2 img-fluid d-block"  />
 
+                    </> ):(<>
+                        <NavLink className="btn btn-outline-primary mx-3" to="/login">Login</NavLink>
+                      <NavLink className="btn btn-primary" to="/register">Sign Up</NavLink>
+                    </>)      }          
+                      
                 </div>
             </div>
+                     
         </nav >
     );
 }
