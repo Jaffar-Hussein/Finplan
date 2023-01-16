@@ -46,7 +46,7 @@ function LandingPage() {
                 {/* Why Us */}
 
                 <div className='d-flex justify-content-center mt-3'>
-                    <button className='btn btn-success  px-5 rounded-pill'>Why Us</button>
+                    <button className='btn btn-success  px-5 rounded-pill' id="about">Why Us</button>
                 </div>
                 <div className='d-flex justify-content-center'>
                     <p className='h5 text-center my-3'>Your advantages of using our system tools to <br></br> achieve your financial goals this year</p>
@@ -97,7 +97,7 @@ function LandingPage() {
                 </div>
 
                 {/* Our Services */}
-                <div className='container my-5 mt-5'>
+                <div className='container my-5 mt-5' id="services">
                     <div className='d-flex justify-content-center'>
                         <button className='btn btn-success  px-5 rounded-pill'>Our Services</button>
                     </div>
@@ -154,7 +154,7 @@ function LandingPage() {
                 </div>
             </div>
             {/* footer */}
-            <div>
+            <div id="contact">
                 <Footer></Footer>
             </div>
         </>

@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { useContext } from "react";
 import Avatar from 'react-avatar';
 import logo from '../assets/logo.svg'
@@ -34,22 +35,28 @@ function manageLogout(){
                         {!isAuthenticated? (
                         <>
                     <li className="nav-item ">
-                        <NavLink className="nav-link active" aria-current="page" end to="/">Home</NavLink>
+                        {/* <NavLink className="nav-link active" aria-current="page" end to="/">Home</NavLink> */}
+                        <AnchorLink className="nav-link" href='/'>Home</AnchorLink>
+
                         </li>
                         <li className="nav-item " >
-                            <NavLink className="nav-link mx-2" to='/' >Dashboard</NavLink>
+                            {/* <NavLink className="nav-link mx-2" to='/' >About us</NavLink> */}
+                            <AnchorLink className="nav-link" href='#about'>About us</AnchorLink>
 
                         </li>
                         <li className="nav-item" >
-                            <NavLink className="nav-link" to='/' >Services</NavLink>
+                        <AnchorLink className="nav-link" offset={() => 150} href='#services'>Services</AnchorLink>
+                            {/* <NavLink className="nav-link" to='#services' >Services</NavLink> */}
                         </li>
                         <li className="nav-item unstyled">
-                            <NavLink className="nav-link" to="/">Contact Us</NavLink>
+                            {/* <NavLink className="nav-link" to="/">Contact Us</NavLink> */}
+                            <AnchorLink className="nav-link" href='#contact'>Contact us</AnchorLink>
+
                         </li>
                         </>):
                         (
                             <><li className="nav-item ">
-                                    <NavLink className="nav-link " aria-current="page" end to="/">Home</NavLink>
+                                    <NavLink className="nav-link " aria-current="page" end to="/dashboard">Dashboard</NavLink>
                                 </li><li className="nav-item ">
                                         <NavLink className="nav-link mx-3" to='/goal'>Goal</NavLink>
 
