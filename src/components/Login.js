@@ -50,7 +50,7 @@ function Login() {
         return
     }
         console.log(d)
-        const { token } = d.jwt;
+        const  token  = d.jwt;
         localStorage.setItem('jwt',token);
         setUserName(d.user.first_name + " " + d.user.second_name)
         login();

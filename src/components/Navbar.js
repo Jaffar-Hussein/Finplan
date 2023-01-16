@@ -58,10 +58,20 @@ const { isAuthenticated,userName } = useContext(AuthContext);
                                     </li></>
                         )}
                     </ul>
-                    {isAuthenticated? (<>
-                        <Avatar name={userName} round={true} size={30} textSizeRatio={1.75} color="#184E77" style={{}}  className="mx-2 img-fluid d-block"  />
+                    {isAuthenticated? (
+                    <>
+                     {/* <div className="dropdown"> 
+                        <a className="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">  */}
+                          <Avatar name={userName} round={true} size={30} textSizeRatio={1.75} color="#184E77" style={{}}  className="mx-2 img-fluid d-block"  />
+                       {/* </a>
+                        <div className="dropdown-menu p-4 text-muted" >
+                            <p>Hello</p>
+                        </div>
+                    </div> */}
 
-                    </> ):(<>
+                    </>
+                     ):(
+                     <>
                         <NavLink className="btn btn-outline-primary mx-3" to="/login">Login</NavLink>
                       <NavLink className="btn btn-primary" to="/register">Sign Up</NavLink>
                     </>)      }          
