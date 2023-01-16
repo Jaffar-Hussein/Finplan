@@ -63,7 +63,7 @@ function manageLogout(){
                                     </li><li className="nav-item">
                                         <NavLink className="nav-link" to='/debt'>Debt</NavLink>
                                     </li><li className="nav-item unstyled">
-                                        <NavLink className="nav-link" to="/">Retirement</NavLink>
+                                        <NavLink className="nav-link" to="/retirement">Retirement</NavLink>
                                     </li></>
                         )}
                     </ul>

@@ -14,6 +14,8 @@ import Debt from './components/Debt';
 import Goal from './components/Goal';   
 import Save from './components/save';
 import Pay from './components/Pay';
+import Retirement from './components/Retirement';
+import Retire from './components/retire';
 function App() {
     // const navigate = useNavigate()
     return (
@@ -29,8 +31,10 @@ function App() {
                     <Route path="/debt" element={<Debt/>} />
                     <Route path="/goal" element={<Goal/>} />
                     <Route path='/debt' element={<Debt/>} />
+                    <Route path='/retirement' element={<Retirement/>} />
                     <Route path="/:save" element={<Save/>} />
                     <Route path='debt/:id' element={<Pay/>}/>
+                    <Route path='retirement/:id' element={<Retire/>}/>
 
                 </Route>
             </Routes>
