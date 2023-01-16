@@ -49,7 +49,7 @@ const { isAuthenticated,userName } = useContext(AuthContext);
                             <><li className="nav-item ">
                                     <NavLink className="nav-link " aria-current="page" end to="/">Home</NavLink>
                                 </li><li className="nav-item ">
-                                        <NavLink className="nav-link mx-3" to='/'>Goal</NavLink>
+                                        <NavLink className="nav-link mx-3" to='/goal'>Goal</NavLink>
 
                                     </li><li className="nav-item">
                                         <NavLink className="nav-link" to='/'>Debt</NavLink>
