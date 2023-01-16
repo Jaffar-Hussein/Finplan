@@ -6,7 +6,7 @@ import '../styling/navbar.css'
 import { AuthContext } from './useAuthCheck';
 // import useAuthCheck from './useAuthCheck';
 function NavBar() {
-const { isAuthenticated } = useContext(AuthContext);
+const { isAuthenticated,userName } = useContext(AuthContext);
 
     
     console.log(isAuthenticated);
@@ -59,7 +59,7 @@ const { isAuthenticated } = useContext(AuthContext);
                         )}
                     </ul>
                     {isAuthenticated? (<>
-                        <Avatar name="John Doe" round={true} size={30} textSizeRatio={1.75} color="#184E77" style={{}}  className="mx-2 img-fluid d-block"  />
+                        <Avatar name={userName} round={true} size={30} textSizeRatio={1.75} color="#184E77" style={{}}  className="mx-2 img-fluid d-block"  />
 
                     </> ):(<>
                         <NavLink className="btn btn-outline-primary mx-3" to="/login">Login</NavLink>

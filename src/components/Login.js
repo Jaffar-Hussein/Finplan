@@ -6,9 +6,10 @@ import { AuthContext } from './useAuthCheck';
 
 function Login() {
   const navigate = useNavigate();
-  const { login } = useContext(AuthContext);
+  const { login,setUserName } = useContext(AuthContext);
   const [email, setemail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
@@ -43,13 +44,20 @@ function Login() {
     })
     .then((r) => r.json())
     .then((d) => {
-      console.log(d)
-      const { token } = d;
-      localStorage.setItem('jwt', token);
-      login();
-      navigate("/dashboard")
+      if (d.status === "error") {
+        console.log(d)
+        setError(d.message)
+        return
     }
-    );
+        console.log(d)
+        const { token } = d.jwt;
+        localStorage.setItem('jwt',token);
+        setUserName(d.user.first_name + " " + d.user.second_name)
+        login();
+        navigate("/dashboard")
+      
+     }
+    )
   }
   
     // const jwt = localStorage.getItem('jwt');
@@ -81,24 +89,24 @@ function Login() {
               <div className="row ">
                 <div className="col-md-9 col-lg-8 mx-auto ">
                   <h3 className="login-heading mb-4" >Sign In</h3>
-                  <form className="box" onSubmit={handleSubmit}>
-                    <div className="form-floating mb-3">
-                      <input type="text" name="email" className="form-control" 
+                  <form className="box needs-validation" onSubmit={handleSubmit}>
+                    <div className="form-floating mb-3 has-validation">
+                      <input type="text" name="email" className={`form-control  ${error ? 'is-invalid' : ''}`} 
                       id="floatingInput" placeholder="name@example.com" value={email} onChange={(e) => setemail(e.target.value)}/>
                       <label>email</label>
                     </div>
-                    <div className="form-floating mb-3">
-                      <input type="password" name="password"  value={password} onChange={(e) => setPassword(e.target.value)} className="form-control" id="floatingPassword" placeholder="Password" />
+                    <div className="form-floating mb-3 has-validation">
+                      <input type="password" name="password"  value={password} onChange={(e) => setPassword(e.target.value)} className={`form-control  ${error ? 'is-invalid' : ''}`} id="floatingPassword" placeholder="Password" />
                       <label>Password</label>
                     </div>
 
                     <div className="form-check mb-3">
-                      <input className="form-check-input" style={{ backgroundColor: '#E19F20' }} type="checkbox" value="" id="rememberPasswordCheck" />
+                      <input className="form-check-input" style={{ backgroundColor: '#E19F20' }} type="checkbox" value="" id="rememberPasswordCheck" required/>
                       <label className="form-check-label" >
                         I agree to terms and condition
                       </label>
                     </div>
-
+                    <div className={`invalid-feedback my-2 ${error ? 'd-block' : ''}`} id="floatingInputFeedback">{error}</div>
                     <div className="d-grid form mb-3">
                       <button className="btn btn-lg btn-primary btn-login  fw-semibold mb-2" type="submit">Login</button>
                       <div className="text-center">

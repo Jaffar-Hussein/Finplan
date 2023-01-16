@@ -40,12 +40,12 @@ function LandingPage() {
 
                 </div>
                 <div className='d-flex justify-content-center'>
-                    <img src={Hero} className="hero my-5" />
+                    <img src={Hero} className="hero my-5 mb-5" />
                 </div>
 
                 {/* Why Us */}
 
-                <div className='d-flex justify-content-center'>
+                <div className='d-flex justify-content-center mt-3'>
                     <button className='btn btn-success  px-5 rounded-pill'>Why Us</button>
                 </div>
                 <div className='d-flex justify-content-center'>
@@ -97,7 +97,7 @@ function LandingPage() {
                 </div>
 
                 {/* Our Services */}
-                <div className='container my-5'>
+                <div className='container my-5 mt-5'>
                     <div className='d-flex justify-content-center'>
                         <button className='btn btn-success  px-5 rounded-pill'>Our Services</button>
                     </div>

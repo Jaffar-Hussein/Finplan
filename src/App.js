@@ -25,11 +25,8 @@ function App() {
                     {/* Add your routes here */}
                     <Route path="/dashboard" element={<Dashboard/>} />
                     <Route path="/debt" element={<Debt/>} />
-
                 </Route>
             </Routes>
-            
-
         </AuthContextProvider>
             
         // <Router>
