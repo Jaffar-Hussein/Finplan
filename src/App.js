@@ -11,6 +11,7 @@ import  AuthContextProvider from './components/useAuthCheck';
 import './App.css';
 import Dashboard from './components/Dashboard';
 import Debt from './components/Debt';
+import Questionnaire from './components/questionnaire';
 
 function App() {
     // const navigate = useNavigate()
@@ -21,11 +22,12 @@ function App() {
                 <Route path="/" exact element={<Landing/>} />
                 <Route path="/login" element={<Login/>} />
                 <Route path="/register" element={<Signup/>} />
+                <Route path='/questionnaire' element={<Questionnaire/>} />
                 <Route element={<ProtectedRoutes/>}>
                     {/* Add your routes here */}
                     <Route path="/dashboard" element={<Dashboard/>} />
                     <Route path="/debt" element={<Debt/>} />
-
+                    
                 </Route>
             </Routes>
             
