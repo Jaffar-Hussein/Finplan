@@ -11,7 +11,10 @@ const { isAuthenticated } = useContext(AuthContext);
       {isAuthenticated ? (
         <Outlet/>
       ) : (
-        navigate("/")
+        
+          navigate("/")
+       
+       
       )}
     </>
   );

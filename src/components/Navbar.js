@@ -6,10 +6,12 @@ import '../styling/navbar.css'
 import { AuthContext } from './useAuthCheck';
 // import useAuthCheck from './useAuthCheck';
 function NavBar() {
-const { isAuthenticated,userName } = useContext(AuthContext);
 
-    
-    console.log(isAuthenticated);
+const { isAuthenticated,userName,logout } = useContext(AuthContext);
+function manageLogout(){
+    logout();
+    localStorage.removeItem('jwt');
+}
     return (
         <nav className="navbar navbar-expand-lg justify-content-between">
             <div className="container">
@@ -68,6 +70,18 @@ const { isAuthenticated,userName } = useContext(AuthContext);
                             <p>Hello</p>
                         </div>
                     </div> */}
+
+<div className="btn-group">
+  <a className="text-muted dropdown-toggle ms-1 text-decoration-none"  data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+    {userName}
+  </a>
+
+  <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <li><a className="dropdown-item" href="#" onClick={manageLogout}>Logout</a></li>
+    <li><a className="dropdown-item" href="#">Another action</a></li>
+    <li><a className="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div>
 
                     </>
                      ):(

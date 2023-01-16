@@ -6,7 +6,7 @@ import { AuthContext } from './useAuthCheck';
 
 function Login() {
   const navigate = useNavigate();
-  const { login,setUserName } = useContext(AuthContext);
+  const { login } = useContext(AuthContext);
   const [email, setemail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -49,10 +49,10 @@ function Login() {
         setError(d.message)
         return
     }
-        console.log(d)
-        const  token  = d.jwt;
-        localStorage.setItem('jwt',token);
-        setUserName(d.user.first_name + " " + d.user.second_name)
+        console.log(d.jwt)
+        // const  token  = d.jwt;
+        localStorage.setItem('jwt',d.jwt);
+        // setUserName(d.user.first_name + " " + d.user.second_name)
         login();
         navigate("/dashboard")
       

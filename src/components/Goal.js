@@ -10,11 +10,11 @@ import axios from "axios";
 function Goal() {
     let navigate = useNavigate();
 
-    const [goals, setGoals] = React.useState([]);
-    const [records, setRecords] = React.useState([]);
+    const [goals, setGoals] = useState([]);
+    const [records, setRecords] = useState([]);
     const bear = 'Bearer ' + localStorage.getItem('jwt')
 
-    React.useEffect(() => {
+    useEffect(() => {
 
         axios.get(`https://finplanbackend-production.up.railway.app/goals`, {
             headers: {
