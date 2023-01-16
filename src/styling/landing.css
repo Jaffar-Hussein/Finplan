@@ -63,15 +63,8 @@ margin-right: 10px;
     content: url('../assets/3.svg');
 }
 
-<<<<<<< HEAD
-#footer footer{
-    position: absolute;
-    /* display: flex; */
-    width: 100%;
-    height: 500px;
-    /* background-color: #E19F20; */
-    justify-content: space-between;
-=======
+
+
 .frame{
     border: 1px solid hsl(206, 66%, 28%);
     
@@ -87,7 +80,7 @@ margin-right: 10px;
 }
 .wealth::after{
     content: url('../assets/dollar.svg');
->>>>>>> origin/development
+/* >>>>>>> origin/development */
 }
 
 .itemsAction{
