@@ -1,0 +1,62 @@
+form input {
+    background-color: transparent!important;
+}
+
+.fin {
+    color: #184E77;
+}
+
+.bg-image {
+    background-image: url('./assets/background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.welcomeText {
+    margin-left: 2rem;
+
+}
+
+.welcome {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.letters{
+        letter-spacing: 5px;
+
+}
+
+.login-heading {
+    font-weight: 300;
+}
+
+.btn-primary {
+    border-color: #184E77 !important;
+    background-color: #184E77 !important;
+}
+
+.login {
+    min-height: 100vh;
+    background: rgba(155, 201, 255, 0.13);
+}
+.form-control:focus{
+    box-shadow: none!important;
+    border-color: #184E77!important;
+}
+
+.form-check-input:focus{
+    box-shadow: none!important;
+    border-color: #184E77!important;
+}
+.form-check-input:focus-visible{
+    box-shadow: none!important;
+    border-color: #184E77!important;
+}
+.form-check-input:checked[type=checkbox] {
+    background-color: #184E77!important;
+}

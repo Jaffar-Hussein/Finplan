@@ -1,32 +1,47 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
+import {Routes, Route} from "react-router-dom"
+import Signup from './components/Register';
+import Login from './components/Login';
+import Landing from './components/LandingPage';
+import ProtectedRoutes from './components/ProtectedRoutes';
+import  AuthContextProvider from './components/useAuthCheck';
+// import Navbar from "./components/navbar";
+// import NotFound from "./components/404";
+// import useAuthCheck from './components/useAuthCheck';
 import './App.css';
-import Signup from './components/sign-up';
-import Login from './components/login';
-import Landing from './components/landingpage';
-import {Routes, Route} from "react-router-dom";
-
+import Dashboard from './components/Dashboard';
+import Debt from './components/Debt';
 
 function App() {
-  const [user, setUser] = useState([]);
+    // const navigate = useNavigate()
+    return (
+        <AuthContextProvider>
+            <Routes>
+                {/* <Route path="/landing"  /> */}
+                <Route path="/" exact element={<Landing/>} />
+                <Route path="/login" element={<Login/>} />
+                <Route path="/register" element={<Signup/>} />
+                <Route element={<ProtectedRoutes/>}>
+                    {/* Add your routes here */}
+                    <Route path="/dashboard" element={<Dashboard/>} />
+                    <Route path="/debt" element={<Debt/>} />
 
-  useEffect(() => {
-    // auto-login
-    fetch("/me").then((r) => {
-      if (r.ok) {
-        r.json().then((user) => setUser(user));
-      }
-    });
-  }, []);
-  return (
-    <div className="App">
-      <Routes>
-        {/* <Route path="" element */}
-        <Route path='/home' element={<Landing />}/>
-        <Route path='/register' element={<Signup setUser={setUser}/>}/>
-        <Route path='/login' element={<Login setUser={setUser}/>}/>
-      </Routes>
-    </div>
-  );
+                </Route>
+            </Routes>
+            
+
+        </AuthContextProvider>
+            
+        // <Router>
+        //     <Routes>
+        //         <Route path='/signup' element={<Signup/>}/>
+        //         <Route path='/login' element={<Login/>}/>
+        //         <Route path='/' element={<Navbar/>}>
+        //             <Route path='*' element={<NotFound/>}/>
+        //         </Route>
+        //     </Routes>
+        // </Router>
+    );
 }
 
 export default App;
