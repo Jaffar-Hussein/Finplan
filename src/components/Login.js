@@ -43,9 +43,8 @@ function Login() {
     })
     .then((r) => r.json())
     .then((d) => {
-      console.log(d)
-      const { token } = d;
-      localStorage.setItem('jwt', token);
+      console.log(d.jwt)
+      localStorage.setItem('jwt', d.jwt);
       login();
       navigate("/dashboard")
     }
