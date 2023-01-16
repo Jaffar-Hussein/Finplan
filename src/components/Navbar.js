@@ -52,7 +52,7 @@ const { isAuthenticated,userName } = useContext(AuthContext);
                                         <NavLink className="nav-link mx-3" to='/goal'>Goal</NavLink>
 
                                     </li><li className="nav-item">
-                                        <NavLink className="nav-link" to='/'>Debt</NavLink>
+                                        <NavLink className="nav-link" to='/debt'>Debt</NavLink>
                                     </li><li className="nav-item unstyled">
                                         <NavLink className="nav-link" to="/">Retirement</NavLink>
                                     </li></>

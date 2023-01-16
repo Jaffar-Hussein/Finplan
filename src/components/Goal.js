@@ -12,8 +12,8 @@ function Goal() {
 
     const [goals, setGoals] = React.useState([]);
     const [records, setRecords] = React.useState([]);
+    const [totLal, setTotal] = React.useState(null);
     const bear = 'Bearer ' + localStorage.getItem('jwt')
-
     React.useEffect(() => {
 
         axios.get(`https://finplanbackend-production.up.railway.app/goals`, {
@@ -30,7 +30,15 @@ function Goal() {
 
     goals.map((goal) => {
         const d = new Date(goal.due_date);
-        goal.due_date = d.toDateString()
+        goal.due_date = d.toDateString();
+        
+    })    
+        let total = 0;
+
+    goals.forEach((goal) => {
+        total += goal.amount_saved
+        
+        // setTotal(total);
     })
 
     function handleChange(e) {
@@ -63,8 +71,8 @@ function Goal() {
 
 
     }
-    function Save(goalId){
-        navigate(`/`+goalId)
+    function Save(goalId) {
+        navigate(`/` + goalId)
 
     }
 
@@ -81,7 +89,7 @@ function Goal() {
                                 <p>Goals Set</p>
                             </div>
                             <div className='goalCard px-5 py-3'>
-                                <p>100</p>
+                                <p>{total}</p>
                                 <p>Savings Done</p>
                             </div>
                         </div>
