@@ -13,6 +13,7 @@ import rafiki from '../assets/rafiki.svg'
 import Footer from './footer';
 import calenderWhite from '../assets/calenderWhite.svg'
 import bottomCal from '../assets/bottomCal.svg'
+import { Link } from "react-router-dom";
 function LandingPage() {
     return (
         <>
@@ -23,8 +24,7 @@ function LandingPage() {
                         <p className='text-center finances h1 my-3'>Financial Management <br></br> Reimagined</p>
                         <p className='text-center'>We’re exist to assist you managing your financial plannings and celebrate <br></br> your financial achievments. </p>
                         <div className='d-flex justify-content-center'>
-                            <button className='btn btn-primary sign'>Sign Up</button>
-
+                            <Link className='btn btn-primary sign' to='/register'>Sign Up</Link>
                         </div>
                         <div className='coin'>
                             <img src={coin} className="img-fluid" />
@@ -138,7 +138,8 @@ function LandingPage() {
                             <p className='text-light'>
                                 Lorem ipsum dolor sit amet consectetur. Elit <br></br> amet lorem tortor dictum tempor penatibus <br></br> turpis eleifend eu.Lorem ipsum dolor sit amet <br></br> consectetur. Elit amet lorem tortor dictum <br></br> tempor penatibus turpis eleifend eu.
                             </p>
-                            <button className='btn btn-primary px-4'>Sign Up</button>
+                            <Link className='btn btn-primary px-4' to='/register'>Sign Up</Link>
+
                         </div>
                         <div className='col-md-6'>
                             <img src={rafiki} className="rafiki my-5"/>

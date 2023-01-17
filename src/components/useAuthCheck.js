@@ -1,9 +1,11 @@
 import React, { createContext, useState,useEffect } from 'react';
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 export const AuthContext = createContext();
 
 const AuthContextProvider = (props) => {
+    const navigate =  useNavigate();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [userName,setUserName] = useState("");
     useEffect(() => {
@@ -23,6 +25,10 @@ const AuthContextProvider = (props) => {
                     setIsAuthenticated(true)
                     setUserName(data.first_name + ' ' + data.second_name)
                 }
+                
+            })
+            .catch((error) => {
+                navigate('/')
             })
     }, [isAuthenticated]);
     

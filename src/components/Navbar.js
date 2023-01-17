@@ -7,7 +7,6 @@ import '../styling/navbar.css'
 import { AuthContext } from './useAuthCheck';
 // import useAuthCheck from './useAuthCheck';
 function NavBar() {
-
 const { isAuthenticated,userName,logout } = useContext(AuthContext);
 function manageLogout(){
     logout();

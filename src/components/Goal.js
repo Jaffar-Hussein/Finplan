@@ -7,13 +7,19 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 
+
 function Goal() {
     let navigate = useNavigate();
-
+    const [name, setName] = React.useState("")
+    const [amount_due, setAmount_due] = React.useState("")
+    const [due_date, setDue_date] = React.useState("")
     const [goals, setGoals] = React.useState([]);
     const [records, setRecords] = React.useState([]);
     const [totLal, setTotal] = React.useState(null);
+    const [message,setMessage]=useState("")
+
     const bear = 'Bearer ' + localStorage.getItem('jwt')
+
     React.useEffect(() => {
 
         axios.get(`https://finplanbackend-production.up.railway.app/goals`, {
@@ -41,20 +47,20 @@ function Goal() {
         // setTotal(total);
     })
 
-    function handleChange(e) {
-        const value = e.target.value;
-        setRecords({
-            ...records,
-            [e.target.name]: value
-        });
-    }
-    console.log(records);
+    // function handleChange(e) {
+    //     const value = e.target.value;
+    //     setRecords({
+    //         ...records,
+    //         [e.target.name]: value
+    //     });
+    // }
+    // console.log(records);
 
     function handleSubmit(e) {
         e.preventDefault();
 
-        const formData = { name: records.name, goal_amount: records.goal_amount, due_date: records.due_date };
-
+        // const formData = { name: records.name, goal_amount: records.goal_amount, due_date: records.due_date };
+        if (name && amount_due && due_date){
         fetch("https://finplanbackend-production.up.railway.app/goals", {
             method: "POST",
             headers: {
@@ -63,12 +69,22 @@ function Goal() {
 
 
             },
-            body: JSON.stringify(formData),
+            body:  JSON.stringify({
+                name,
+                amount_due,
+                due_date
+              }),
         })
             .then(r => r.json())
             .then((newItem) => setGoals([...goals, newItem]));
         navigate('/goal');
-
+        setName("")
+        setAmount_due("")
+        setDue_date("")
+        setMessage("")
+    }else{
+        setMessage("Please input valid data")
+    }
 
     }
     function Save(goalId) {
@@ -106,13 +122,13 @@ function Goal() {
                                 </thead>
                                 <tbody>
                                     {goals.map((goal) => {
-                                        return <tr>
+                                        return <tr key={goal.id+goal.name}>
                                             {/* <th scope="row">1</th> */}
                                             <td>{goal.name}</td>
                                             <td>{goal.goal_amount}</td>
                                             <td>{goal.amount_saved}</td>
                                             <td>{goal.due_date}</td>
-                                            <button className='btn btn-primary btn-sm' onClick={() => Save(goal.id)}>Save</button>
+                                            <td><button className='btn btn-primary btn-sm' onClick={() => Save(goal.id)}>Save</button></td>
                                         </tr>
                                     })}
 
@@ -125,28 +141,30 @@ function Goal() {
                         <div className='d-flex justify-content-center'>
                             <p className='titleGoal h3'>Create a goal</p>
                         </div>
-                        <form className='m-5'>
+                        <form className="m-5 needs-validation" onSubmit={handleSubmit} noValidate>
                             <div>
                                 <label className='labl'>Goal Name *</label>
-                                <input type="text" name="name" placeholder="Enter goal name" onChange={handleChange} className='form-control' required/>
+                                <input type="text" name="name" value={name} placeholder="Enter goal" onChange={(e) => setName(e.target.value)} className='form-control' required/>
                             </div>
                             <div className='my-5'>
                                 <label className='labl'>Amount *</label>
-                                <input type="number" name="goal_amount" placeholder="Enter goal amount" onChange={handleChange} className='form-control' required/>
+                                <input type="number" name="amount_due" value={amount_due} placeholder="Enter amount due" onChange={(e) => setAmount_due(e.target.value)} className='form-control' required/>
 
                             </div>
                             <div>
                                 <label className='labl'>Due Date *</label>
-                                <input type="date" name="due_date" placeholder="Enter Due date" onChange={handleChange} className='form-control' required/>
+                                <input type="date" name="due_date" value={due_date} placeholder="Enter Due date" onChange={(e) => setDue_date(e.target.value)} className='form-control' required/>
 
                             </div>
                             <div className='d-flex justify-content-center my-5'>
-                                <button className="btn btn-primary" type='submit' onSubmit={handleSubmit} onClick={handleSubmit}>Submit</button>
+                                <button className="btn btn-primary" type='submit' >Submit</button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
+
+            <Toast message={message}/>
         </>
     );
 }

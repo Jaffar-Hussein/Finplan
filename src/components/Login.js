@@ -3,6 +3,9 @@ import logo from '../assets/logo.svg'
 import { Link,useNavigate, } from 'react-router-dom'
 import {useState, React,useContext } from 'react'
 import { AuthContext } from './useAuthCheck';
+import axios from "axios";
+import Toast from './toast';
+
 
 function Login() {
   const navigate = useNavigate();
@@ -11,60 +14,54 @@ function Login() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const response = await fetch('https://finplanbackend-production.up.railway.app/login', {
-  //       method: 'POST',
-  //       headers: { 'Content-Type': 'application/json' },
-  //       body: JSON.stringify({ email, password }),
-  //     });
-
-  //     const data = await response.json();
-  //     const { token } = data;
-  //     localStorage.setItem('jwt', token);
-  //     // navigate('/dashboard');
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
         
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("https://finplanbackend-production.up.railway.app/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        password,
-        email,
-      }),
-    })
-    .then((r) => r.json())
-    .then((d) => {
-      if (d.status === "error") {
-        console.log(d)
-        setError(d.message)
-        return
-    }
-        console.log(d.jwt)
-        // const  token  = d.jwt;
-        localStorage.setItem('jwt',d.jwt);
-        // setUserName(d.user.first_name + " " + d.user.second_name)
-        login();
-        navigate("/dashboard")
+    // fetch("https://finplanbackend-production.up.railway.app/login", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     password,
+    //     email,
+    //   }),
+    // })
+    // .then((r) => r.json())
+    // .then((d) => {
+    //   console.log(r.ok);
+    //   if (d.status === "error") {
+    //     console.log(d)
+    //     setError(d.message)
+    //     return
+    // }
+    // else{
+
+    //   console.log(d.jwt)
+    //   localStorage.setItem('jwt',d.jwt);
+    //   login();
+    //   navigate("/dashboard")
+    // }
       
-     }
-    )
+    //  }
+    // )
+    axios.post('https://finplanbackend-production.up.railway.app/login', {
+      password,
+      email,
+    })
+    .then(function (response) {
+      console.log(response.data.jwt);
+      login()
+      localStorage.setItem( 'jwt',response.data.jwt);
+      navigate("/dashboard")
+    })
+    .catch(function (error) {
+      setError("Invalid Email or Password",error)
+    });
   }
   
-    // const jwt = localStorage.getItem('jwt');
-    // if (jwt) {
-    //   navigate('/dashboard');
-    // }
-  
+
 
   return (
     <>
@@ -106,7 +103,7 @@ function Login() {
                         I agree to terms and condition
                       </label>
                     </div>
-                    <div className={`invalid-feedback my-2 ${error ? 'd-block' : ''}`} id="floatingInputFeedback">{error}</div>
+                    {/* <div className={`invalid-feedback my-2 ${error ? 'd-block' : ''}`} id="floatingInputFeedback">{error}</div> */}
                     <div className="d-grid form mb-3">
                       <button className="btn btn-lg btn-primary btn-login  fw-semibold mb-2" type="submit">Login</button>
                       <div className="text-center">
@@ -125,6 +122,7 @@ function Login() {
           </div>
         </div>
       </div>
+      <Toast message={error}/>
     </>
 
   );
