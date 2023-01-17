@@ -70,7 +70,7 @@ function Save() {
 
                         <div className='my-3'>
                             <label>Amount to Save*</label>
-                            <input type="number" placeholder="Enter amount to save" name="amount_saved" onChange={handleChange} className='form-control' />
+                            <input type="number" placeholder="Enter amount to save" name="amount_saved" onChange={handleChange} className='form-control' required/>
 
                             <div className='d-flex justify-content-center'>
                                 <button className='btn btn-secondary mt-5' type='submit' onClick={handleSubmit} onSubmit={handleSubmit}>Save</button>

@@ -18,6 +18,9 @@ form input {
     margin-left: 2rem;
 
 }
+.btn:focus,.btn:focus-visible{
+    box-shadow:  0 2px 25px rgba(225, 159, 32, 0.5)!important;
+}
 
 .welcome {
     position: absolute;

@@ -69,7 +69,7 @@ function Pay() {
 
                         <div className='my-3'>
                             <label>Amount to Pay*</label>
-                            <input type="number" placeholder="Enter amount to pay" name="amount_paid" onChange={handleChange} className='form-control' />
+                            <input type="number" placeholder="Enter amount to pay" name="amount_paid" onChange={handleChange} className='form-control' required/>
 
                             <div className='d-flex justify-content-center'>
                                 <button className='btn btn-secondary mt-5' type='submit' onClick={handleSubmit} onSubmit={handleSubmit}>Save</button>

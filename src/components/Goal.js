@@ -128,16 +128,16 @@ function Goal() {
                         <form className='m-5'>
                             <div>
                                 <label className='labl'>Goal Name *</label>
-                                <input type="text" name="name" placeholder="Enter goal name" onChange={handleChange} className='form-control' />
+                                <input type="text" name="name" placeholder="Enter goal name" onChange={handleChange} className='form-control' required/>
                             </div>
                             <div className='my-5'>
                                 <label className='labl'>Amount *</label>
-                                <input type="number" name="goal_amount" placeholder="Enter goal amount" onChange={handleChange} className='form-control' />
+                                <input type="number" name="goal_amount" placeholder="Enter goal amount" onChange={handleChange} className='form-control' required/>
 
                             </div>
                             <div>
                                 <label className='labl'>Due Date *</label>
-                                <input type="date" name="due_date" placeholder="Enter Due date" onChange={handleChange} className='form-control' />
+                                <input type="date" name="due_date" placeholder="Enter Due date" onChange={handleChange} className='form-control' required/>
 
                             </div>
                             <div className='d-flex justify-content-center my-5'>

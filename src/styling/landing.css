@@ -9,6 +9,9 @@
     border-color: #E19F20 !important;
     color: #E19F20 !important;
 }
+.btn:focus,.btn:focus-visible{
+    box-shadow:  0 2px 25px rgba(225, 159, 32, 0.5)!important;
+}
 .sign{
     letter-spacing: 2px;
 }
