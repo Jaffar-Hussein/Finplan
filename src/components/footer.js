@@ -12,7 +12,8 @@ function Footer(){
                     <div className='d-flex justify-content-around align-items-center brandLogo flex-wrap'>
                         <img src={logo} className="img-fluid mx-3 " />
                         <p className='text-center  h3 footerLogo'>Fin-Plan</p>
-                        <p className='text-wrap footertext mx-5'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                        <p className='text-wrap footertext mx-5'>Achieving your personal and professional aspirations with the support of our expert management,<br></br>
+</p>
                     </div>
 
                     <div>

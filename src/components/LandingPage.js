@@ -22,7 +22,7 @@ function LandingPage() {
                 <div className='d-flex justify-content-center titleHead'>
                     <div className=''>
                         <p className='text-center finances h1 my-3'>Financial Management <br></br> Reimagined</p>
-                        <p className='text-center'>We’re exist to assist you managing your financial plannings and celebrate <br></br> your financial achievments. </p>
+                        <p className='text-center'>Achieving your personal and professional aspirations with the support of our expert management, <br></br>tailored to meet your unique needs and drive success. </p>
                         <div className='d-flex justify-content-center'>
                             <Link className='btn btn-primary sign' to='/register'>Sign Up</Link>
                         </div>
@@ -109,11 +109,13 @@ function LandingPage() {
                         <div className='d-flex flex-column frame p-3 '>
                             <img src={debtPlanner} className='serviceIcon mb-2' />
                             <p className='text-center h5 mb-4'>Debt Planner</p>
+                            {/* <p>Expert debt management and planning services for a brighter financial future. Get out of debt and achieve financial freedom with our tailored solutions.</p> */}
                             <p>Lorem ipsum dolor sit amet consectetur. Elit <br></br> amet lorem tortor dictum tempor penatibus <br></br> turpis eleifend eu.Lorem ipsum dolor sit amet <br></br>consectetur. Elit amet lorem tortor dictum <br></br>tempor penatibus turpis eleifend eu.</p>
                         </div>
                         <div className='d-flex flex-column frame p-3'>
                             <img src={retirement} className='serviceIcon mb-2' />
                             <p className='text-center h5 mb-4'>Retirement Planner</p>
+                            
                             <p>Lorem ipsum dolor sit amet consectetur. Elit <br></br> amet lorem tortor dictum tempor penatibus <br></br> turpis eleifend eu.Lorem ipsum dolor sit amet <br></br>consectetur. Elit amet lorem tortor dictum <br></br>tempor penatibus turpis eleifend eu.</p>
                         </div>
                         <div className='d-flex flex-column frame p-3'>
@@ -136,7 +138,7 @@ function LandingPage() {
                                 <span className='wealth'>Lets make your wealth</span> <br></br>  work for you today.
                             </p>
                             <p className='text-light'>
-                                Lorem ipsum dolor sit amet consectetur. Elit <br></br> amet lorem tortor dictum tempor penatibus <br></br> turpis eleifend eu.Lorem ipsum dolor sit amet <br></br> consectetur. Elit amet lorem tortor dictum <br></br> tempor penatibus turpis eleifend eu.
+                            Are you ready to take control of your financial future? <br></br> Contact our financial planning company today to schedule a consultation and begin creating a personalized plan to achieve your financial goals.<br></br> Don't wait any longer, take action and secure your financial future.
                             </p>
                             <Link className='btn btn-primary px-4' to='/register'>Sign Up</Link>
 
