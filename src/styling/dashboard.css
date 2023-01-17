@@ -1,0 +1,20 @@
+body {
+    background: #F5F5F5;
+}
+
+.goalNo {
+    /* background: #FFFFFF;
+    box-shadow: 0px 15px 90px rgba(0, 0, 0, 0.07); */
+    border: 1px solid #E19F20;
+
+}
+
+.figure {
+    color: #E19F20;
+
+}
+
+.chartCard {
+    background: #FFFFFF;
+    box-shadow: 0px 15px 90px rgba(0, 0, 0, 0.07);
+}
