@@ -85,8 +85,8 @@ function manageLogout(){
 
   <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
     <li><a className="dropdown-item" href="#" onClick={manageLogout}>Logout</a></li>
-    <li><a className="dropdown-item" href="#">Another action</a></li>
-    <li><a className="dropdown-item" href="#">Something else here</a></li>
+    {/* <li><a className="dropdown-item" href="#">Another action</a></li>
+    <li><a className="dropdown-item" href="#">Something else here</a></li> */}
   </ul>
 </div>
 

@@ -1,5 +1,7 @@
 import Navbar from './Navbar'
 import NavBar from './Navbar';
+import Toast from './toast';
+
 import { Routes, Route, useNavigate } from "react-router-dom";
 
 import '../styling/goal.css'
@@ -8,11 +10,14 @@ import axios from "axios";
 function Debt() {
 
     let navigate = useNavigate();
-
+    const [message,setMessage]=useState("")
     const [debts, setDebts] = React.useState([]);
     const [records, setRecords] = React.useState([]);
     const bear = 'Bearer ' + localStorage.getItem('jwt')
-    React.useEffect(() => {
+    const [name, setName] = React.useState("")
+    const [amount_due, setAmount_due] = React.useState("")
+    const [due_date, setDue_date] = React.useState("")
+    useEffect(() => {
 
         axios.get(`https://finplanbackend-production.up.railway.app/debts`, {
             headers: {
@@ -39,33 +44,46 @@ function Debt() {
         // setTotal(total);
     })
 
-    function handleChange(e) {
-        const value = e.target.value;
-        setRecords({
-            ...records,
-            [e.target.name]: value
-        });
-    }
-    console.log(records);
+    // function handleChange(e) {
+    //     const value = e.target.value;
+    // console.log(value);
+
+    //     setRecords({
+    //         ...records,
+    //         [e.target.name]: value
+    //     });
+    // }
+    // console.log(records);
 
     function handleSubmit(e) {
         e.preventDefault();
 
-        const formData = { name: records.name, amount_due: records.amount_due, due_date: records.due_date };
-
-        fetch("https://finplanbackend-production.up.railway.app/debts", {
-            method: "POST",
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-                'Authorization': bear
-
-
-            },
-            body: JSON.stringify(formData),
-        })
-            .then(r => r.json())
-            .then((newItem) => setDebts([...debts, newItem]));
-        navigate('/debt');
+        // const formData = { name:name, amount_due: amount_due,  records.due_date };
+        if (name && amount_due && due_date){
+            fetch("https://finplanbackend-production.up.railway.app/debts", {
+                method: "POST",
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                    'Authorization': bear
+    
+    
+                },
+                body:  JSON.stringify({
+                    name,
+                    amount_due,
+                    due_date
+                  }),
+            })
+                .then(r => r.json())
+                .then((newItem) => setDebts([...debts, newItem]));
+            navigate('/debt');
+            setName("")
+            setAmount_due("")
+            setDue_date("")
+            setMessage("")
+        }else{
+            setMessage("Please input valid data")
+        }
 
 
     }
@@ -92,7 +110,7 @@ function Debt() {
                             </div>
                         </div>
                         <div>
-                            <table class="table">
+                            <table className="table">
                                 <thead>
                                     <tr>
                                         {/* <th scope="col">#</th> */}
@@ -104,13 +122,13 @@ function Debt() {
                                 </thead>
                                 <tbody>
                                     {debts.map((debt) => {
-                                        return <tr>
+                                        return <tr key={debt.id+debt.name}>
                                             {/* <th scope="row">1</th> */}
                                             <td>{debt.name}</td>
                                             <td>{debt.amount_due}</td>
                                             <td>{debt.amount_paid}</td>
                                             <td>{debt.due_date}</td>
-                                            <button className='btn btn-primary btn-sm' onClick={() => Save(debt.id)}>Save</button>
+                                            <td><button className='btn btn-primary btn-sm' onClick={() => Save(debt.id)}>Save</button></td>
                                         </tr>
                                     })}
 
@@ -123,29 +141,32 @@ function Debt() {
                         <div className='d-flex justify-content-center'>
                             <p className='titleGoal h3'>Create a debt</p>
                         </div>
-                        <form className='m-5'>
+                        <form className="m-5 needs-validation" onSubmit={handleSubmit} noValidate>
                             <div>
                                 <label className='labl'>Debt Name *</label>
-                                <input type="text" name="name" placeholder="Enter goal name" onChange={handleChange} className='form-control' required/>
+                                <input type="text" name="name" value={name} placeholder="Enter debt" onChange={(e) => setName(e.target.value)} className='form-control' required/>
                             </div>
                             <div className='my-5'>
                                 <label className='labl'>Amount *</label>
-                                <input type="number" name="amount_due" placeholder="Enter amount due" onChange={handleChange} className='form-control' required/>
+                                <input type="number" name="amount_due" value={amount_due} placeholder="Enter amount due" onChange={(e) => setAmount_due(e.target.value)} className='form-control' required/>
 
                             </div>
                             <div>
                                 <label className='labl'>Due Date *</label>
-                                <input type="date" name="due_date" placeholder="Enter Due date" onChange={handleChange} className='form-control' required/>
+                                <input type="date" name="due_date" value={due_date} placeholder="Enter Due date" onChange={(e) => setDue_date(e.target.value)} className='form-control' required/>
 
                             </div>
                             <div className='d-flex justify-content-center my-5'>
-                                <button className="btn btn-primary" type='submit' onSubmit={handleSubmit} onClick={handleSubmit}>Submit</button>
+                                <button className="btn btn-primary" type='submit' >Submit</button>
                             </div>
                         </form>
                     </div>
                 </div>
 
             </div>
+
+            <Toast message={message}/>
+
         </>
     );
 

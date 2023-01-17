@@ -1,7 +1,7 @@
 import Navbar from './Navbar'
 import NavBar from './Navbar';
 import { Routes, Route, useNavigate } from "react-router-dom";
-
+import Toast from './toast';
 import '../styling/goal.css'
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -146,7 +146,6 @@ function Goal() {
                         </form>
                     </div>
                 </div>
-
             </div>
         </>
     );
