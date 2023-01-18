@@ -123,7 +123,7 @@ function Debt() {
                         <div className='d-flex justify-content-center'>
                             <p className='titleGoal h3'>Create a debt</p>
                         </div>
-                            <figure class="text-center mt-3">
+                            <figure className="text-center mt-3">
   <blockquote className="blockquote text-muted fst-italic">
     <p>Debt is the slavery of the free.</p>
   </blockquote>

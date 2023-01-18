@@ -147,7 +147,7 @@ function Retirement(){
                             <p className='titleGoal h3'>Create a Retirement Goal</p>
                             
                         </div>
-                        <figure class="text-center mt-3">
+                        <figure className="text-center mt-3">
   <blockquote className="blockquote text-muted fst-italic">
     <p>The only limit to our realization of tomorrow will be our doubts of today..</p>
   </blockquote>

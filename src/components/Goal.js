@@ -140,7 +140,7 @@ console.log(goals);
                         <div className='d-flex justify-content-center'>
                             <p className='titleGoal h3'>Create a goal</p>
                         </div>
-                        <figure class="text-center mt-3">
+                        <figure className="text-center mt-3">
   <blockquote className="blockquote text-muted fst-italic">
     <p>The key to making your financial dreams come true is to start with a clear vision of what you want, and then to create a plan to make it happen.</p>
   </blockquote>
