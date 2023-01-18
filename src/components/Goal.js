@@ -33,7 +33,7 @@ function Goal() {
                 setGoals(response.data)
 
             })
-    },[goals])
+    },[])
 
     goals.map((goal) => {
         const d = new Date(goal.due_date);

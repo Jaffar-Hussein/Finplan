@@ -11,6 +11,8 @@ function Debt() {
     const bear = 'Bearer ' + localStorage.getItem('jwt')
     const [name, setName] = React.useState("")
     const [amount_due, setAmount_due] = React.useState("")
+    const [amount_paid, setAmount_paid] = React.useState(0)
+
     const [due_date, setDue_date] = React.useState("")
     useEffect(() => {
         axios.get(`https://finplanbackend-production.up.railway.app/debts`, {
@@ -23,7 +25,7 @@ function Debt() {
                 console.log(response);
 
             })
-    },[debts])
+    },[])
     debts.map((goal) => {
         const d = new Date(goal.due_date);
         goal.due_date = d.toDateString();
@@ -46,7 +48,7 @@ function Debt() {
                 body:  JSON.stringify({
                     name,
                     amount_due,
-                    due_date
+                    due_date,amount_paid
                   }),
             })
                 .then(r => r.json())
