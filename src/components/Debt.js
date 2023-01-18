@@ -90,6 +90,8 @@ function Debt() {
                                         <th scope="col" className='tableTitle'>Amount due</th>
                                         <th scope="col" className='tableTitle'>Amount paid</th>
                                         <th scope="col" className='tableTitle'>Due Date</th>
+                                        <th scope="col" className='tableTitle'>Save</th>
+
                                         {/* <th scope="col" className='tableTitle'>Due Date</th>
                                         <th scope="col" className='tableTitle'>Due Date</th> */}
 
@@ -97,7 +99,7 @@ function Debt() {
                                 </thead>
                                 <tbody>
                                     {debts.map((debt) => {
-                                        return <tr key={debt.id+debt.name}>
+                                        return <tr key={debt.id+debt.name} className={`  ${ (debt.amount_due - debt.amount_paid) <= 0 ? 'text-decoration-line-through' : ''}`}>
                                             {/* <th scope="row">1</th> */}
                                             <td>{debt.name}</td>
                                             <td>{debt.amount_due}</td>
@@ -106,7 +108,7 @@ function Debt() {
                                             {/* <td>{debt.due_date}</td>
                                             <td>{debt.due_date}</td> */}
 
-                                            <td><button className='btn btn-primary btn-sm' onClick={() => Save(debt.id)}>Save</button></td>
+                                            <td><button onClick={() => Save(debt.id)} className={`btn btn-primary btn-sm  ${ (debt.amount_due - debt.amount_paid) <= 0 ? 'disabled' : ''}`} >Save</button></td>
                                         </tr>
                                     })}
 
@@ -119,6 +121,14 @@ function Debt() {
                         <div className='d-flex justify-content-center'>
                             <p className='titleGoal h3'>Create a debt</p>
                         </div>
+                            <figure class="text-center mt-3">
+  <blockquote className="blockquote text-muted fst-italic">
+    <p>Debt is the slavery of the free.</p>
+  </blockquote>
+  <figcaption className="blockquote-footer">
+  Publilius Syrus <cite title="Source Title">20Bc</cite>
+  </figcaption>
+</figure>
                         <form className="m-5 needs-validation" onSubmit={handleSubmit} noValidate>
                             <div>
                                 <label className='labl'>Debt Name *</label>
@@ -138,6 +148,7 @@ function Debt() {
                                 <button className="btn btn-primary" type='submit' >Submit</button>
                             </div>
                         </form>
+          
                     </div>
                 </div>
 

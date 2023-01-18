@@ -90,7 +90,7 @@ function Login() {
                     <div className="form-floating mb-3 has-validation">
                       <input type="text" name="email" className={`form-control  ${error ? 'is-invalid' : ''}`} 
                       id="floatingInput" placeholder="name@example.com" value={email} onChange={(e) => setemail(e.target.value)}/>
-                      <label>email</label>
+                      <label>Email</label>
                     </div>
                     <div className="form-floating mb-3 has-validation">
                       <input type="password" name="password"  value={password} onChange={(e) => setPassword(e.target.value)} className={`form-control  ${error ? 'is-invalid' : ''}`} id="floatingPassword" placeholder="Password" />

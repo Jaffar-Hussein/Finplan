@@ -223,7 +223,7 @@ function Dashboard() {
                             <p></p>
                         }
                         <Pie data={dataNo}
-                        />;
+                        />
                     </div>
                 </div>
                 <Modal></Modal>

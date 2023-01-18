@@ -11,11 +11,12 @@ import axios from "axios";
 function Goal() {
     let navigate = useNavigate();
     const [name, setName] = React.useState("")
-    const [amount_due, setAmount_due] = React.useState("")
+    const [goal_amount, setAmount_due] = React.useState("")
     const [due_date, setDue_date] = React.useState("")
     const [goals, setGoals] = React.useState([]);
-    const [records, setRecords] = React.useState([]);
-    const [totLal, setTotal] = React.useState(null);
+    const amount_saved = 0
+    // const [records, setRecords] = React.useState([]);
+    // const [totLal, setTotal] = React.useState(null);
     const [message,setMessage]=useState("")
 
     const bear = 'Bearer ' + localStorage.getItem('jwt')
@@ -41,26 +42,18 @@ function Goal() {
     })    
         let total = 0;
 
-    goals.forEach((goal) => {
-        total += goal.amount_saved
+    // goals.forEach((goal) => {
+    //     total += goal.amount_saved
         
-        // setTotal(total);
-    })
+    //     // setTotal(total);
+    // })
+console.log(goals);
 
-    // function handleChange(e) {
-    //     const value = e.target.value;
-    //     setRecords({
-    //         ...records,
-    //         [e.target.name]: value
-    //     });
-    // }
-    // console.log(records);
-
+// const balance = goal.goal_amount - goal.amount_saved 
     function handleSubmit(e) {
         e.preventDefault();
 
-        // const formData = { name: records.name, goal_amount: records.goal_amount, due_date: records.due_date };
-        if (name && amount_due && due_date){
+        if (name && goal_amount && due_date){
         fetch("https://finplanbackend-production.up.railway.app/goals", {
             method: "POST",
             headers: {
@@ -71,8 +64,9 @@ function Goal() {
             },
             body:  JSON.stringify({
                 name,
-                amount_due,
-                due_date
+                goal_amount,
+                due_date,
+                amount_saved
               }),
         })
             .then(r => r.json())
@@ -117,20 +111,23 @@ function Goal() {
                                         <th scope="col" className='tableTitle'>Name</th>
                                         <th scope="col" className='tableTitle'>Amount</th>
                                         <th scope="col" className='tableTitle'>Amount Saved</th>
+                                        {/* <th scope="col" className='tableTitle'>Pending</th> */}
                                         <th scope="col" className='tableTitle'>Due Date</th>
                                         <th scope="col" className='tableTitle'>Action</th>
+
 
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {goals.map((goal) => {
-                                        return <tr key={goal.id+goal.name}>
+                                        return <tr key={goal.id+goal.name}  className={`  ${ (goal.goal_amount - goal.amount_saved ) <= 0 ? 'text-decoration-line-through' : ''}`}>
                                             {/* <th scope="row">1</th> */}
                                             <td>{goal.name}</td>
                                             <td>{goal.goal_amount}</td>
                                             <td>{goal.amount_saved}</td>
+                                            {/* <td>{goal.goal_amount - goal.amount_saved }</td> */}
                                             <td>{goal.due_date}</td>
-                                            <td><button className='btn btn-primary btn-sm' onClick={() => Save(goal.id)}>Save</button></td>
+                                            <td><button className={`btn btn-primary btn-sm  ${ (goal.goal_amount - goal.amount_saved ) <= 0 ? 'disabled' : ''}`}  onClick={() => Save(goal.id)} >Save</button></td>
                                         </tr>
                                     })}
 
@@ -143,6 +140,14 @@ function Goal() {
                         <div className='d-flex justify-content-center'>
                             <p className='titleGoal h3'>Create a goal</p>
                         </div>
+                        <figure class="text-center mt-3">
+  <blockquote className="blockquote text-muted fst-italic">
+    <p>The key to making your financial dreams come true is to start with a clear vision of what you want, and then to create a plan to make it happen.</p>
+  </blockquote>
+  <figcaption className="blockquote-footer">
+  Suze Orman <cite title="Source Title"> 8Bc</cite>
+  </figcaption>
+</figure>
                         <form className="m-5 needs-validation" onSubmit={handleSubmit} noValidate>
                             <div>
                                 <label className='labl'>Goal Name *</label>
@@ -150,8 +155,7 @@ function Goal() {
                             </div>
                             <div className='my-5'>
                                 <label className='labl'>Amount *</label>
-                                <input type="number" name="amount_due" value={amount_due} placeholder="Enter amount due" onChange={(e) => setAmount_due(e.target.value)} className='form-control' required/>
-
+                                <input type="number" name="goal_amount" value={goal_amount} placeholder="Enter amount due" onChange={(e) => setAmount_due(e.target.value)} className='form-control' required/>
                             </div>
                             <div>
                                 <label className='labl'>Due Date *</label>
