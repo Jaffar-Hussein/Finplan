@@ -156,7 +156,7 @@ function Dashboard() {
             <div className='container'>
                 <p className='h2 my-5'> Welcome {userName},</p>
                 <p>Here is your today overview insights</p>
-                <div className='d-flex justify-content-around my-5'>
+                <div className='d-flex justify-content-around cardsDashboard'>
                     <div className='goalNo p-5 text-center'>
                         <p className='figure'> {goals.length}</p>
                         <p className='text-center'>Total Goals set</p>
@@ -189,8 +189,8 @@ function Dashboard() {
                     </div>
                 </div>
 
-                <div className='d-flex justify-content-around'>
-                    <div className='chartCard p-5' style={{ height: "", position: "relative", marginBottom: "1%", padding: "1%" }}>
+                <div className='d-flex justify-content-around  graph my-5'>
+                    <div className='chartCard p-5 my-5' style={{ height: "", position: "relative", marginBottom: "1%", padding: "1%" }}>
                         {data ?
                             <p className='text-center h5 mb-5'>Retirement paid off , <br></br> debt paid off <br></br> and goals savings</p>
                             :
@@ -199,7 +199,7 @@ function Dashboard() {
                         <Pie data={data}
                         />;
                     </div>
-                    <div className='chartCard p-5' style={{ height: "", position: "relative", marginBottom: "1%", padding: "1%" }}>
+                    <div className='chartCard p-5 my-5' style={{ height: "", position: "relative", marginBottom: "1%", padding: "1%" }}>
                         {data ?
                             <p className='text-center h5 mb-5'>Number of Goals and Debts</p>
                             :

@@ -97,7 +97,7 @@ function Debt() {
             <Navbar></Navbar>
 
             <div className='container'>
-                <div className='row'>
+                <div className='row flip'>
                     <div className='col-md-6'>
                         <div className='d-flex justify-content-around text-center my-5'>
                             <div className='goalCard px-5 py-3'>
