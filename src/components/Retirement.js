@@ -12,7 +12,7 @@ function Retirement(){
     const [records, setRecords] = React.useState([]);
     const [totLal, setTotal] = React.useState(null);
     const bear = 'Bearer ' + localStorage.getItem('jwt')
-    React.useEffect(() => {
+    useEffect(() => {
 
         axios.get(`https://finplanbackend-production.up.railway.app/retirements`, {
             headers: {
@@ -20,11 +20,11 @@ function Retirement(){
             },
         })
             .then((response) => {
-
+                console.log(response.data);
                 setRetirements(response.data)
 
             })
-    })
+    },[])
 
     retirements.map((goal) => {
         const d = new Date(goal.due_date);
@@ -46,7 +46,7 @@ function Retirement(){
             [e.target.name]: value
         });
     }
-    console.log(records);
+    // console.log(records);
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -92,7 +92,7 @@ function Retirement(){
                             </div>
                         </div>
                         <div>
-                            <table class="table">
+                            <table className="table">
                                 <thead>
                                     <tr>
                                         {/* <th scope="col">#</th> */}

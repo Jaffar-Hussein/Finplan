@@ -1,72 +1,47 @@
 import Navbar from './Navbar'
-import NavBar from './Navbar';
 import Toast from './toast';
-
-import { Routes, Route, useNavigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 import '../styling/goal.css'
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 function Debt() {
-
     let navigate = useNavigate();
     const [message,setMessage]=useState("")
     const [debts, setDebts] = React.useState([]);
-    const [records, setRecords] = React.useState([]);
     const bear = 'Bearer ' + localStorage.getItem('jwt')
     const [name, setName] = React.useState("")
     const [amount_due, setAmount_due] = React.useState("")
     const [due_date, setDue_date] = React.useState("")
     useEffect(() => {
-
         axios.get(`https://finplanbackend-production.up.railway.app/debts`, {
             headers: {
                 'Authorization': bear
             },
         })
             .then((response) => {
-
                 setDebts(response.data)
+                console.log(response);
 
             })
-    })
-
+    },[])
     debts.map((goal) => {
         const d = new Date(goal.due_date);
         goal.due_date = d.toDateString();
-
     })
     let total = 0;
-
     debts.forEach((goal) => {
         total += goal.amount_paid
 
         // setTotal(total);
     })
-
-    // function handleChange(e) {
-    //     const value = e.target.value;
-    // console.log(value);
-
-    //     setRecords({
-    //         ...records,
-    //         [e.target.name]: value
-    //     });
-    // }
-    // console.log(records);
-
     function handleSubmit(e) {
         e.preventDefault();
-
-        // const formData = { name:name, amount_due: amount_due,  records.due_date };
         if (name && amount_due && due_date){
             fetch("https://finplanbackend-production.up.railway.app/debts", {
                 method: "POST",
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
                     'Authorization': bear
-    
-    
                 },
                 body:  JSON.stringify({
                     name,
@@ -84,14 +59,11 @@ function Debt() {
         }else{
             setMessage("Please input valid data")
         }
-
-
     }
     function Save(goalId) {
         navigate(`/debt/` + goalId)
 
     }
-
     return (
         <>
             <Navbar></Navbar>
@@ -118,6 +90,9 @@ function Debt() {
                                         <th scope="col" className='tableTitle'>Amount due</th>
                                         <th scope="col" className='tableTitle'>Amount paid</th>
                                         <th scope="col" className='tableTitle'>Due Date</th>
+                                        {/* <th scope="col" className='tableTitle'>Due Date</th>
+                                        <th scope="col" className='tableTitle'>Due Date</th> */}
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -128,6 +103,9 @@ function Debt() {
                                             <td>{debt.amount_due}</td>
                                             <td>{debt.amount_paid}</td>
                                             <td>{debt.due_date}</td>
+                                            {/* <td>{debt.due_date}</td>
+                                            <td>{debt.due_date}</td> */}
+
                                             <td><button className='btn btn-primary btn-sm' onClick={() => Save(debt.id)}>Save</button></td>
                                         </tr>
                                     })}

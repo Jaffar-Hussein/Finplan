@@ -1,5 +1,5 @@
 import Navbar from './Navbar'
-import NavBar from './Navbar';
+// import NavBar from './Navbar';
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Toast from './toast';
 import '../styling/goal.css'
@@ -32,7 +32,7 @@ function Goal() {
                 setGoals(response.data)
 
             })
-    })
+    },[])
 
     goals.map((goal) => {
         const d = new Date(goal.due_date);
@@ -110,7 +110,7 @@ function Goal() {
                             </div>
                         </div>
                         <div>
-                            <table class="table">
+                            <table className="table">
                                 <thead>
                                     <tr>
                                         {/* <th scope="col">#</th> */}

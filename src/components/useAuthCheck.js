@@ -7,6 +7,7 @@ export const AuthContext = createContext();
 const AuthContextProvider = (props) => {
     const navigate =  useNavigate();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isFirsttime, setIsFirsttime] = useState(false);
     const [userName,setUserName] = useState("");
     useEffect(() => {
         const jwt = localStorage.getItem('jwt')
@@ -42,7 +43,7 @@ const AuthContextProvider = (props) => {
     };
     
     return (
-        <AuthContext.Provider value={{ isAuthenticated, login, logout, userName }}>
+        <AuthContext.Provider value={{ isAuthenticated, login, logout, userName, isFirsttime }}>
             {props.children}
         </AuthContext.Provider>
     );

@@ -1,17 +1,20 @@
-#questionnaire{
+/* #questionnaire{
     background-color: #F5F5F5;
     width : 80%;
     display: block;
     margin-left: auto;
     margin-right: auto;
     font-family: sans-serif;
-}
+} */
 
-form{
+.questionnareForm{
     
         display: block;
         margin-left: auto;
         margin-right: auto;
         width: 40%;
       
+}
+.modal-content,.modal-header{
+    background-color: #F5F5F5 !important;
 }

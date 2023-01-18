@@ -26,7 +26,6 @@ function App() {
                 <Route path="/" exact element={<Landing/>} />
                 <Route path="/login" element={<Login/>} />
                 <Route path="/register" element={<Signup/>} />
-                <Route path='/questionnaire' element={<Questionnaire/>} />
                 <Route element={<ProtectedRoutes/>}>
                     {/* Add your routes here */}
                     <Route path="/dashboard" element={<Dashboard/>} />
@@ -37,7 +36,7 @@ function App() {
                     <Route path="/:save" element={<Save/>} />
                     <Route path='debt/:id' element={<Pay/>}/>
                     <Route path='retirement/:id' element={<Retire/>}/>
-
+                    <Route path='/questionnare' element={<Questionnaire/>}/>
                 </Route>
             </Routes>
         </AuthContextProvider>
