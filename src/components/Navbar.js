@@ -57,7 +57,7 @@ function manageLogout(){
                             <><li className="nav-item ">
                                     <NavLink className="nav-link " aria-current="page" end to="/dashboard">Dashboard</NavLink>
                                 </li><li className="nav-item ">
-                                        <NavLink className="nav-link mx-3" to='/goal'>Goal</NavLink>
+                                        <NavLink className="nav-link" to='/goal'>Goal</NavLink>
 
                                     </li><li className="nav-item">
                                         <NavLink className="nav-link" to='/debt'>Debt</NavLink>
@@ -65,18 +65,21 @@ function manageLogout(){
                                         <NavLink className="nav-link" to="/retirement">Retirement</NavLink>
                                     </li></>
                         )}
-                    </ul>
+                    
                     {isAuthenticated? (
                     <>
                      {/* <div className="dropdown"> 
                         <a className="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">  */}
-                          <Avatar name={userName} round={true} size={30} textSizeRatio={1.75} color="#184E77" style={{}}  className="mx-2 img-fluid d-block"  />
+                        <li className="nav-link mt-1 p-0 ms-3" >
+                        <Avatar name={userName} round={true} size={30} textSizeRatio={1.75} color="#184E77" style={{}}  className=" img-fluid d-block"  />
+
+                        </li>
                        {/* </a>
                         <div className="dropdown-menu p-4 text-muted" >
                             <p>Hello</p>
                         </div>
                     </div> */}
-
+<li className="nav-link">
 <div className="btn-group">
   <a className="text-muted dropdown-toggle ms-1 text-decoration-none"  data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
     {userName}
@@ -89,13 +92,16 @@ function manageLogout(){
   </ul>
 </div>
 
+</li>
+
+
                     </>
                      ):(
                      <>
                         <NavLink className="btn btn-outline-primary mx-3" to="/login">Login</NavLink>
                       <NavLink className="btn btn-primary" to="/register">Sign Up</NavLink>
                     </>)      }          
-                      
+                      </ul>
                 </div>
             </div>
                      
