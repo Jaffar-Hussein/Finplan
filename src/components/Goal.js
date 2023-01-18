@@ -118,6 +118,8 @@ function Goal() {
                                         <th scope="col" className='tableTitle'>Amount</th>
                                         <th scope="col" className='tableTitle'>Amount Saved</th>
                                         <th scope="col" className='tableTitle'>Due Date</th>
+                                        <th scope="col" className='tableTitle'>Action</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -153,7 +155,7 @@ function Goal() {
                             </div>
                             <div>
                                 <label className='labl'>Due Date *</label>
-                                <input type="date" name="due_date" value={due_date} placeholder="Enter Due date" onChange={(e) => setDue_date(e.target.value)} className='form-control' required/>
+                                <input type="date" name="due_date" value={due_date} placeholder="Enter Due date" onChange={(e) => setDue_date(e.target.value)} className='form-control data-date-start-date="+1d"' required/>
 
                             </div>
                             <div className='d-flex justify-content-center my-5'>
