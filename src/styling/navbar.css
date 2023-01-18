@@ -1,0 +1,13 @@
+.btn-primary{
+    background-color: #E19F20 !important;
+    border-color: #E19F20 !important;
+
+}
+.btn-outline-primary{
+    border-color: #E19F20 !important;
+    color: #E19F20 !important;
+}
+.btn-outline-primary:hover{
+    background-color: #E19F20 !important;
+    color: #FFFF !important;
+}

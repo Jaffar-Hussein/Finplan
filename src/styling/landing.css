@@ -1,0 +1,114 @@
+*{
+    font-family: 'Montserrat';
+}
+.finances{
+    color:#184E77;
+    letter-spacing: 5px;
+}
+.btn-outline-primary{
+    border-color: #E19F20 !important;
+    color: #E19F20 !important;
+}
+.btn:focus,.btn:focus-visible{
+    box-shadow:  0 2px 25px rgba(225, 159, 32, 0.5)!important;
+}
+.sign{
+    letter-spacing: 2px;
+}
+.titleHead{
+    position:relative;
+}
+.coin{
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+}
+.calendericon{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.calendericon1{
+    position: absolute;
+    bottom: 0;  
+    right: 0;
+
+}
+.hero{
+    height:50vh
+}
+.manageIcon{
+    height:25vh;
+}
+.btn-success{
+    background-color: #D8F3FF !important;
+    border-color: #D8F3FF !important;
+    color: #537FAB !important;
+}
+.usDesc{
+    background-image: url('../assets/orange-ellipse.png');
+    
+}
+.saveIcon{
+    height: 40vh;
+}
+.mgnt::before{
+content:url('../assets/1.svg');
+margin-right: 10px;
+}
+.ret::before{
+    content: url('../assets/2.svg');
+    margin-right: 10px;
+
+}
+.ret1::before{
+    content: url('../assets/3.svg');
+}
+
+.frame{
+    border: 1px solid hsl(206, 66%, 28%);
+    
+}
+.serviceIcon{
+    height: 20vh;
+}
+.bgAction{
+   background: url('../assets/Rectanglea.svg');
+}
+.rafiki{
+    height: 50vh;
+}
+.wealth::after{
+    content: url('../assets/dollar.svg');
+}
+
+.itemsAction{
+    position: relative;
+}.cal1{
+    position: absolute;
+    top:0;
+    left:0;
+    height: 15vh;
+}
+.cal2{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+}
+@media screen and (max-width: 990px) {
+    *{
+        overflow-x: hidden;
+    }
+    .coin, .calendericon{
+        display: none;
+    }
+    .allService{
+        flex-wrap:wrap;
+    }
+    .frame{
+        margin-bottom: 1rem;
+    }
+
+}
