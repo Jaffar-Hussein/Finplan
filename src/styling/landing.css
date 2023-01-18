@@ -66,6 +66,8 @@ margin-right: 10px;
     content: url('../assets/3.svg');
 }
 
+
+
 .frame{
     border: 1px solid hsl(206, 66%, 28%);
     
@@ -81,6 +83,7 @@ margin-right: 10px;
 }
 .wealth::after{
     content: url('../assets/dollar.svg');
+/* >>>>>>> origin/development */
 }
 
 .itemsAction{
