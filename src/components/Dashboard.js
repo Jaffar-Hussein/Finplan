@@ -8,6 +8,7 @@ import { Pie } from 'react-chartjs-2';
 import { AuthContext } from './useAuthCheck';
 
 
+
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 
@@ -16,12 +17,20 @@ function Dashboard() {
     const [debts, setDebts] = React.useState([]);
     const [retirements, setRetirements] = React.useState([]);
 
-    const { userName } = useContext(AuthContext);
+    const { userName,isFirsttime } = useContext(AuthContext);
     const modal = useRef(null);
 
     React.useEffect(() => {
-        modal.current?.click();
-    }, []);
+        // setTimeout(function() {
+
+            if (isFirsttime){
+        console.log(isFirsttime);
+
+                modal.current?.click();
+            }
+        //   }, 1000);
+      
+    }, [isFirsttime]);
 
 
     const bear = 'Bearer ' + localStorage.getItem('jwt')
@@ -156,7 +165,7 @@ function Dashboard() {
             <NavBar />
             <div className='container'>
                 <p className='h2 my-5'> Welcome {userName},</p>
-                <button type="button" class="d-none" data-bs-toggle="modal" data-bs-target="#staticBackdrop" ref={modal}>
+                <button type="button" className="d-none" data-bs-toggle="modal" data-bs-target="#staticBackdrop" ref={modal}>
                     Launch static backdrop modal
                 </button>
                 

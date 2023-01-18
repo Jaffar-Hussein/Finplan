@@ -5,18 +5,17 @@ function Modal(){
 return (
     <>
     
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable border-0">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5 text-center" id="staticBackdropLabel">Backgound information</h1>
-                        {/* <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> */}
+        <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable border-0">
+                <div className="modal-content">
+                    <div className="modal-header">
+                        <h1 className="modal-title fs-5 text-center" id="staticBackdropLabel">Backgound information</h1>
+                        {/* <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> */}
                     </div>
-                    <div class="modal-body">
+                    <div className="modal-body">
                         <Questionnaire/>
-
                     </div>
-                    <div class="modal-footer border-0">
+                    <div className="modal-footer border-0">
                     </div>
                 </div>
             </div>

@@ -25,6 +25,12 @@ const AuthContextProvider = (props) => {
                     const data = response.data
                     setIsAuthenticated(true)
                     setUserName(data.first_name + ' ' + data.second_name)
+                    
+                    if (!data.age ){
+                    console.log(data);
+
+                        setIsFirsttime(true)
+                    }
                 }
                 
             })
