@@ -23,7 +23,7 @@ function Debt() {
                 console.log(response);
 
             })
-    },[])
+    },[debts])
     debts.map((goal) => {
         const d = new Date(goal.due_date);
         goal.due_date = d.toDateString();
