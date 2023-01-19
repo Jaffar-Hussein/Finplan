@@ -1,9 +1,10 @@
 import Navbar from './Navbar'
 import Toast from './toast';
-import { useNavigate } from "react-router-dom";
+import { useNavigate , useParams} from "react-router-dom";
 import '../styling/goal.css'
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+
 function Debt() {
     let navigate = useNavigate();
     const [message,setMessage]=useState("")
@@ -12,7 +13,7 @@ function Debt() {
     const [name, setName] = React.useState("")
     const [amount_due, setAmount_due] = React.useState("")
     const [amount_paid, setAmount_paid] = React.useState(0)
-
+    const here = useParams
     const [due_date, setDue_date] = React.useState("")
     useEffect(() => {
         axios.get(`https://finplanbackend-production.up.railway.app/debts`, {
@@ -25,7 +26,7 @@ function Debt() {
                 console.log(response);
 
             })
-    },[])
+    },[here])
     debts.map((goal) => {
         const d = new Date(goal.due_date);
         goal.due_date = d.toDateString();

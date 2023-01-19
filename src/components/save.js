@@ -26,7 +26,7 @@ function Save() {
                 setGoal(response.data)
 
             })
-    }, [])
+    }, [goal])
     function handleChange(e) {  
         const value = e.target.value;
         setRecords({

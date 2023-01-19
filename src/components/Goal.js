@@ -1,9 +1,9 @@
 import Navbar from './Navbar'
 // import NavBar from './Navbar';
-import { Routes, Route, useNavigate } from "react-router-dom";
+import {  useNavigate, useParams } from "react-router-dom";
 import Toast from './toast';
 import '../styling/goal.css'
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import axios from "axios";
 
 
@@ -15,6 +15,8 @@ function Goal() {
     const [due_date, setDue_date] = React.useState("")
     const [goals, setGoals] = React.useState([]);
     const amount_saved = 0
+    const here = useParams
+
     // const [records, setRecords] = React.useState([]);
     // const [totLal, setTotal] = React.useState(null);
     const [message,setMessage]=useState("")
@@ -33,7 +35,7 @@ function Goal() {
                 setGoals(response.data)
 
             })
-    },[])
+    },[here])
 
     goals.map((goal) => {
         const d = new Date(goal.due_date);
