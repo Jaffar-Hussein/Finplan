@@ -187,7 +187,7 @@ function Dashboard() {
                             percentageDebt >= 100 ? <p>All debt paid off</p>
                                 :
                                 <>
-                                    <p className='figure'> {percentageDebt} %</p>
+                                    <p className='figure'> {percentageDebt.toFixed(1)} %</p>
                                     <p className='text-center'>Debt Paid off</p>
                                 </>
 
@@ -198,7 +198,7 @@ function Dashboard() {
                         {
                             percentageRetire >= 100 ? <p> Retirement goal reached </p> :
                                 <>
-                                    <p className='figure'> {percentageRetire} %</p>
+                                    <p className='figure'> {percentageRetire.toFixed(1)} %</p>
                                     <p className='text-center'>To Retire</p>
                                 </>
                         }

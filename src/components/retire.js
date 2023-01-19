@@ -61,7 +61,7 @@ function Retire() {
             <NavBar></NavBar>
             <div className="save">
                 {retire ?
-                    <p className='text-center h3 titleGoal'>{`Save towards retiring at ${retire.retirement_age}`}</p>
+                    <p className='text-center h3 titleGoal'>{`Save towards retiring with ${retire.name}`}</p>
                     : <></>}
                 <div className='formFrame saveForm p-5'>
 
