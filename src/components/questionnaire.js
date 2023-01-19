@@ -47,6 +47,8 @@ function Questionnaire(){
       <div className='my-2'>
         <label className='labl'>Gender *</label>
         <select className="form-select text-muted" aria-label="Default select example"  onChange={(e) => setGender(e.target.value)} defaultValue={gender}>
+        <option >Gender</option>
+          
           <option >Male</option>
           <option >Female</option>
         </select>
@@ -58,6 +60,8 @@ function Questionnaire(){
       <div className='my-2'>
         <label className='labl'>Sources of Income *</label>
         <select className="form-select text-muted" aria-label="Default select example" defaultValue={source_type} onChange={(e) => setSourceType(e.target.value)}>
+        <option >Source of Income</option>
+          
           <option >Salary</option>
           <option >Business</option>
           <option >Investements</option>

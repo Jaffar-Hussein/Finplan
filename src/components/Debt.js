@@ -13,7 +13,7 @@ function Debt() {
     const [name, setName] = React.useState("")
     const [amount_due, setAmount_due] = React.useState("")
     const [amount_paid, setAmount_paid] = React.useState(0)
-    const {id} = useParams()
+    const id = useParams()
     const [due_date, setDue_date] = React.useState("")
     useEffect(() => {
         axios.get(`https://finplanbackend-production.up.railway.app/debts`, {

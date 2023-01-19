@@ -15,7 +15,7 @@ function Goal() {
     const [due_date, setDue_date] = React.useState("")
     const [goals, setGoals] = React.useState([]);
     const amount_saved = 0
-    const {id} = useParams()
+    const id = useParams()
 
     // const [records, setRecords] = React.useState([]);
     // const [totLal, setTotal] = React.useState(null);
