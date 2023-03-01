@@ -1,31 +1,37 @@
-# Create React App
+# [FinPlan](https://finplan-5torf44tk-jaffar-hussein.vercel.app)
 
-This directory is a brief example of a [Create React App](https://github.com/facebook/create-react-app) site that can be deployed to Vercel with zero configuration.
+FinPlan is a web application that helps users plan their finances by providing tools for financial goal planning, debt planning, and retirement planning. With FinPlan, users can set financial goals, track their progress, and get advice on how to improve their financial habits.
 
-## Deploy Your Own
 
-Deploy your own Create React App project with Vercel.
+<img width="1440" alt="Screenshot 2023-03-01 at 21 46 10" src="https://user-images.githubusercontent.com/57854451/222261110-bef57b93-29d4-414e-8c5c-544b72586997.png">
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/create-react-app&template=create-react-app)
+## Features
+- User authentication with Devise
+- Financial goal planning and tracking
+- Debt planning and tracking
+- Retirement planning and tracking
+- Dashboard for quick access to financial information
 
-_Live Example: https://create-react-template.vercel.app/_
 
-## Available Scripts
+## Technologies Used
+- Ruby on Rails (Backend)
+- PostgreSQL (Database)
+- ReactJS (Frontend)
+- Jest and Minitests (Testing Framework)
+- Devise (Authentication)
+- Raleway (Deployment)
 
-In the project directory, you can run:
+## Getting Started
+1. Clone the repository to your local machine
+2. Install Ruby on Rails and PostgreSQL on your machine
+3. Install the necessary gems by running ```bundle install```
+4. Set up the database by running ```rails db:create``` and ```rails db:migrate```
+5. Start the Rails server by running ```rails server```
+6. Navigate to ```localhost:3000``` in your web browser to access the application
 
-### `npm start`
+## Future Improvements
+- [x] Financial habits questionnaire for new users
+- [ ] Integration with APIs for financial data and retirement planning tools (e.g. Personal Capital)
+- [ ] Addition of financial advice and recommendations based on user data
+- [ ] Integration with more payment gateways for payment of debts and financial goals
 
-Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes. You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.
-
-It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
